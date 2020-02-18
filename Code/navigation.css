@@ -19,6 +19,9 @@
 	background-color: #fb2525;
 }
 
+
+
+
 /* Navbar container */
 .navbar {
 overflow: hidden;
@@ -42,6 +45,7 @@ float: right;
 overflow: hidden;
 }
 
+
 /* Dropdown button */
 .dropdown .dropbtn {
 font-size: 16px;
@@ -54,6 +58,7 @@ font-family: inherit; /* Important for vertical align on mobile phones */
 margin: 0; /* Important for vertical align on mobile phones */
 cursor: pointer;
 }
+
 
 /* Dropdown button */
 .dropbtn2 {

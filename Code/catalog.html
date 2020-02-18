@@ -5,6 +5,9 @@
 <title>Catalog</title>
 <link rel="stylesheet" type="text/css" href="navigation.css">
 <link rel="stylesheet" type="text/css" href="search.css">
+<link rel="stylesheet" type="text/less" href="catalog_items.less">
+<link rel="stylesheet" type="text/css" href="catalog_items.css">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 
@@ -25,7 +28,11 @@ img {
 
 <body class="style">
 <ul>
+	<h1 style="text-align:center">POINTS</h1>
+
 	<div class="dropdown">
+		
+
 		<button class="dropbtn"><img src="profpic.png" alt="Avatar" width="50" height="50" align="right">
 		</button>
 		<div class="dropdown-content">
@@ -39,17 +46,25 @@ img {
 	</div>
 </ul>
 
-<br style = “line-height:10;”><br>
+<br style = “line-height:10”>
 
-
-
-<!-- The form -->
+<!-- The search form -->
 <form class="example" action="/action_page.php" style="margin:auto;max-width:500px">
 	<input type="text" placeholder="Search.." name="search2">
 	<button type="submit"><i class="fa fa-search"></i></button>
 </form>
 
-S
+<br style = “line-height:10”>
 
+<!--Categories-->
+<div class="buttons">
+	<button class="active" data-sort="sort-all">All</button>
+	<button>Recommended</button>
+	<button>Pants</button>
+	<button>Shirts</button>
+</div>
+  
+<div class="boxes"></div>
+<script src="catalog_items.js"></script>
 </body>
 </html>
