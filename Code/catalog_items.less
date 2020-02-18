@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    
+  }
+  
+  body {
+    font-family: "Exo";
+    background-color: #eee;
+    color: #595959;
+  }
+  
+  
+  /*
+      Frameless			<http://framelessgrid.com/>
+      by Joni Korpi 		<http://jonikorpi.com/>
+      licensed under CC0	<http://creativecommons.org/publicdomain/zero/1.0/>
+  */
+  
+  
+  //
+  // Configuration
+  //
+  
+  @font-size: 16; 		// Your base font-size in pixels
+  @em: @font-size*1em;	// Shorthand for outputting ems, e.g. "12/@em"
+  
+  @column: 48;	// The column-width of your grid in pixels
+  @gutter: 24;	// The gutter-width of your grid in pixels
+  
+  
+  //
+  // Column-widths in variables, in ems
+  //
+  
+   @1cols: ( 1 * (@column + @gutter) - @gutter) / @em; @1col: @1cols;
+   @2cols: ( 2 * (@column + @gutter) - @gutter) / @em;
+   @3cols: ( 3 * (@column + @gutter) - @gutter) / @em;
+   @4cols: ( 4 * (@column + @gutter) - @gutter) / @em;
+   @5cols: ( 5 * (@column + @gutter) - @gutter) / @em;
+   @6cols: ( 6 * (@column + @gutter) - @gutter) / @em;
+   @7cols: ( 7 * (@column + @gutter) - @gutter) / @em;
+   @8cols: ( 8 * (@column + @gutter) - @gutter) / @em;
+   @9cols: ( 9 * (@column + @gutter) - @gutter) / @em;
+  @10cols: (10 * (@column + @gutter) - @gutter) / @em;
+  @11cols: (11 * (@column + @gutter) - @gutter) / @em;
+  @12cols: (12 * (@column + @gutter) - @gutter) / @em;
+  @13cols: (13 * (@column + @gutter) - @gutter) / @em;
+  @14cols: (14 * (@column + @gutter) - @gutter) / @em;
+  @15cols: (15 * (@column + @gutter) - @gutter) / @em;
+  @16cols: (16 * (@column + @gutter) - @gutter) / @em;
+  @17cols: (17 * (@column + @gutter) - @gutter) / @em;
+  @18cols: (18 * (@column + @gutter) - @gutter) / @em;
+  @19cols: (19 * (@column + @gutter) - @gutter) / @em;
+  @20cols: (20 * (@column + @gutter) - @gutter) / @em;
+  @21cols: (21 * (@column + @gutter) - @gutter) / @em;
+  @22cols: (22 * (@column + @gutter) - @gutter) / @em;
+  
+  
+  //
+  // Column-widths in a function, in ems
+  //
+  
+  .width (@cols:1) {
+      width: (@cols * (@column + @gutter) - @gutter) / @em;
+  }
+  
+  .buttons {
+    width: 460px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  button {
+    border: 0;
+    padding: 1em 1.5em;
+    background-color: #595959;
+    color: #fff;
+    font-size: 1em;
+    font-family: "Exo";
+    outline: 0;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all .3s;
+    box-shadow: rgba(0,0,0,.09803920000000001) 0px -3px 0px 0px inset;  
+    &:hover {
+      background-color: #333;
+    }
+    &.active, &:active {
+      background-color: #7ac8ff;
+    }
+  }
+  
+  .boxes {
+    padding-top: 2em;
+    width: 65em;
+    margin: 0 auto;
+  
+  }
+  
+  .box { width: 15em; height: 17em; float: left; margin: 0 0 1em 1em; background-color: #fff; box-shadow: 0 0 4px rgba(0,0,0,.2); border-radius: 4px; overflow: hidden;
+    img {
+      max-width: 100%;
+    }
+    .details {
+       padding: 1em;
+       text-align: center;
+    }
+    .title {
+      font-size: 1em;
+      padding-bottom: .5em;
+    }
+    .price {
+      color: #888;
+    }
+  }
+  
+  
