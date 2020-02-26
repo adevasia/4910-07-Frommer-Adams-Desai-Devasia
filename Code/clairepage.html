@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile Page</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<style>
+
+body {
+	margin: auto;
+	padding: 80px;
+	font-family: sans-serif;
+	text-align: center;
+	background: #000000;
+}
+fieldset {
+	color: #fff;	
+}
+form {
+	color: #fff;
+}
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #fb2525;
+}
+
+li {
+	float: right;
+}
+
+li a {
+	display: block;
+	padding: 12px;
+}
+
+img {
+  border-radius: 50%;
+}
+</style>
+</head>
+
+<body>
+
+<ul>
+	<li><a href="login.html">Logout</a></li>
+	<li><a href="#profile">Profile</a></li>
+</ul>
+
+<p>
+	<img src="profpic.png" alt="Avatar" width="200" height="200" align="middle">
+	<form>
+  		<input type="radio" name="type" value="driver"> Driver<br>
+  		<input type="radio" name="type" value="sponsor" checked> Sponsor<br>
+  		<input type="radio" name="type" value="admin"> Administrator  
+	</form>
+<p>
+
+<form>
+    <fieldset>
+    	<legend><b>Personal Info</b></legend>
+    	<p>
+          	<input type = "text"
+               	id = "firstname"
+               	value = "Claire" />
+            <input type = "text"
+               	id = "middlename"
+               	value = "Nicole" />
+            <input type = "text"
+               	id = "lastname"
+               	value = "Frommer" />
+            <!-- <br><small>First name Middle name Last name</small> -->
+        </p>
+    </fieldset>
+    <fieldset>
+    	<legend><b>Contact Info</b></legend>
+    	<p>
+    		<input type = "text"
+               	id = "phonenumber"
+               	value = "301-503-8054" />
+            <!-- <br><small>Cell phone number</small><br><br> -->
+            <input type = "text"
+               	id = "email"
+               	value = "cfromme@clemson.edu" />
+            <!-- <br><small>Email</small><br><br> -->
+            <ins><br><br>Mailing Address</ins>
+            <p>
+            	<input type = "text"
+               		id = "streetaddress"
+               		value = "118F University Village Drive" />
+            	<!-- <br><small>Street Address</small><br><br> -->
+            	<input type = "text"
+               		id = "city"
+               		value = "Central" />
+              <select id="state">
+  					<option value="AL">Alabama - AL</option>
+  					<option value="AK">Alaska - AK</option>
+  					<option value="AZ">Arizona - AZ</option>
+  					<option value="AR">Arkansas - AR</option>
+  					<option value="CA">California - CA</option>
+  					<option value="CO">Colorado - CO</option>
+  					<option value="CT">Connecticut - CT</option>
+  					<option value="DE">Delaware - DE</option>
+  					<option value="FL">Florida - FL</option>
+  					<option value="GA">Georgia - GA</option>
+  					<option value="HI">Hawaii - HI</option>
+  					<option value="ID">Idaho - ID</option>
+  					<option value="IL">Illinois - IL</option>
+  					<option value="IN">Indiana - IN</option>
+  					<option value="IA">Iowa - IA</option>
+  					<option value="KS">Kansas - KS</option>
+  					<option value="KY">Kentucky - KY</option>
+  					<option value="LA">Louisiana - LA</option>
+  					<option value="ME">Maine - ME</option>
+  					<option value="MD">Maryland - MD</option>
+  					<option value="MA">Massachusetts - MA</option>
+  					<option value="MI">Michigan - MI</option>
+  					<option value="MN">Minnesota - MN</option>
+  					<option value="MS">Mississippi - MS</option>
+  					<option value="MO">Missouri - MO</option>
+  					<option value="MT">Montana - MT</option>
+  					<option value="NE">Nebraska - NE</option>
+  					<option value="NV">Nevada - NV</option>
+  					<option value="NH">New Hampshire - NH</option>
+  					<option value="NJ">New Jersey - NJ</option>
+  					<option value="NM">New Mexico - NM</option>
+  					<option value="NY">New York - NY</option>
+  					<option value="NC">North Carolina - NC</option>
+  					<option value="ND">North Dakota - ND</option>
+  					<option value="OH">Ohio - OH</option>
+  					<option value="OK">Oklahoma - OK</option>
+  					<option value="OR">Oregon - OR</option>
+  					<option value="PA">Pennsylvania - PA</option>
+  					<option value="RI">Rhode Island - RI</option>
+  					<option value="SC"selected>South Carolina - SC selected</option>
+  					<option value="SD">South Dakota - SD</option>
+  					<option value="TN">Tennessee - TN</option>
+  					<option value="TX">Texas - TX</option>
+  					<option value="UT">Utah - UT</option>
+  					<option value="VT">Vermont - VT</option>
+  					<option value="VA">Virginia - VA</option>
+  					<option value="WA">Washington - WA</option>
+  					<option value="WV">West Virginia - WV</option>
+  					<option value="WI">Wisconsin - WI</option>
+  					<option value="WY">Wyoming - WY</option>
+				</select>
+                <input type = "text"
+               		id = "zipcode"
+               		value = "29630" />
+               	<!-- <br><small>City State Zip Code</small><br><br> -->
+            </p>
+            <ins>Emergency Contact</ins>
+            <p>
+            	<input type = "text"
+               		id = "firstname"
+               		value = "Claire" />
+            	<input type = "text"
+               		id = "middlename"
+               		value = "Nicole" />
+               	<input type = "text"
+               		id = "lastname"
+               		value = "Frommer" />
+               	<!-- <br><small>First name Middle name Last name</small><br><br> -->
+               	<input type = "text"
+               		id = "phonenumber"
+               		value = "301-503-8054" />
+            	<!-- <br><small>Cell phone number</small>--><br><br>
+            	<input type = "text"
+               		id = "email"
+               		value = "cfromme@clemson.edu" />
+            	<!-- <br><small>Email</small><br><br> -->
+            	<input type = "text"
+            		id = "relationship"
+            		value = "self" />
+            	<!-- <br><small>Relationship</small><br><br> -->
+            </p>
+        </p>
+    </fieldset>
+</form>
+
+</body>
+</html>
