@@ -19,6 +19,18 @@
 	background-color: #fb2525;
 }
 
+.style li {
+	float: center;
+}
+
+.style li a {
+	display: inline;
+}
+
+.style img {
+  border-radius: 50%;
+}
+
 .pointer{
 	display: inline;
 	vertical-align: -35px;
