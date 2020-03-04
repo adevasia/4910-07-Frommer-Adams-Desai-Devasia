@@ -3,6 +3,7 @@
 <head>
 <title>Profile Page</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" type="text/css" href="navigation.css">
 <style>
 
 body {
@@ -43,10 +44,18 @@ img {
 
 <body>
 
-<ul>
-	<li><a href="login.html">Logout</a></li>
-	<li><a href="#profile">Profile</a></li>
-</ul>
+	<ul>
+        <div class="dropdown">
+            <button class="dropbtn"><a href="adminprof.html"><img src="admin.jpg" alt="Avatar" width="50" height="50" >
+            </a></button>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="login.html">Logout</a>
+            </div>
+        </div>
+    
+    </ul>
 
 <p>
 	<img src="admin.jpg" alt="Avatar" width="200" height="200" align="middle">

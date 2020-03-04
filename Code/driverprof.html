@@ -3,6 +3,7 @@
 <head>
 <title>Profile Page</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" type="text/css" href="navigation.css">
 <style>
 
 body {
@@ -25,16 +26,6 @@ ul {
 	overflow: hidden;
 	background-color: #fb2525;
 }
-
-li {
-	float: right;
-}
-
-li a {
-	display: block;
-	padding: 12px;
-}
-
 img {
   border-radius: 50%;
 }
@@ -42,11 +33,22 @@ img {
 </head>
 
 <body>
-
-<ul>
-	<li><a href="login.html">Logout</a></li>
-	<li><a href="#profile">Profile</a></li>
-</ul>
+	<ul>
+    <h2 class="pointer">POINTS: </h2>
+    
+        <div class="dropdown">
+            <button class="dropbtn"><a href="driverprof.html"><img src="profpic.png" alt="Avatar" width="50" height="50" >
+            </a></button>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="login.html">Logout</a>
+            </div>
+        </div>
+    
+        <button class="dropbtn2"><li><a href="shoppingCart.html"><img src="cart.png" alt="Cart" width="50" height="50"  style="float: right;"></a></li></button>
+    
+    </ul>
 
 <p>
 	<img src="profpic.png" alt="Avatar" width="200" height="200" align="middle">
