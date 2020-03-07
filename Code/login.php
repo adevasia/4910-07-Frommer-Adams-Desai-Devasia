@@ -1,3 +1,4 @@
+<?php include('server.php')?>
 <html>
 	<head>
 		<title> Login Form Design</title>
@@ -6,14 +7,18 @@
 <body>
 		<div class = "left-box">
 			<h1 align="center"> Login </h1>
-			<form>
+			<form action="login.php" method="post">
 				<p>Email</p>
 				<input type = "text" name = "email" placeholder="Enter your email"/>
 				<p>Password</p>
 				<input type = "password" name = "password" placeholder="Enter your password"/>
-				<input type="submit" formaction="driverprof.html" name = "" value="Login"/>
-				<a href="forgotPass.html">Forgot your password?</a><br>
-				<a href="signup.html">Don't have an account?</a><br>
+				<button type="submit" name = "login_user">Login</button>
+				<p>
+					Forgot your password? <a href="forgotPass.html">Forgot Password</a>
+				</p>
+				<p>
+					Don't have an account? <a href="signup.php">Sign up</a>
+				</p>				
 			</form>
 	</div>
 </body>
