@@ -3,7 +3,6 @@
 <head>
 <title>Profile Page</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
-<link rel="stylesheet" type="text/css" href="navigation.css">
 <style>
 
 body {
@@ -43,61 +42,58 @@ img {
 </head>
 
 <body>
-	<ul>
-        <div class="dropdown">
-            <button class="dropbtn"><a href="company.html"><img src="spons.jpg" alt="Avatar" width="50" height="50" >
-            </a></button>
-            <div class="dropdown-content">
-                <a href="sponsor_home.html">HOME</a>
-                <a href="#">DRIVER</a>
-                <a href="#">POINT SYSTEM</a>
-                <a href="#">CATALOG</a>
-                <a href="#">ANALYTIC</a>
-                <a href="login.html">LOGOUT</a>
-            </div>
-        </div>
-    
-    </ul>
+
+<ul>
+	<li><a href="login.html">Logout</a></li>
+	<li><a href="#profile">Profile</a></li>
+</ul>
 
 <p>
-	<img src="spons.jpg" alt="Avatar" width="200" height="200" align="middle">
+	<img src="profpic.png" alt="Avatar" width="200" height="200" align="middle">
 	<form>
-  		<input type="radio" name="type" value="sponsor" checked> Sponsor<br> 
+  		<input type="radio" name="type" value="driver"> Driver<br>
+  		<input type="radio" name="type" value="sponsor" checked> Sponsor<br>
+  		<input type="radio" name="type" value="admin"> Administrator  
 	</form>
 <p>
 
 <form>
     <fieldset>
-    	<legend><b>Company Info</b></legend>
+    	<legend><b>Personal Info</b></legend>
     	<p>
           	<input type = "text"
                	id = "firstname"
-               	placeholder = "Company name" />
+               	value = "Claire" />
+            <input type = "text"
+               	id = "middlename"
+               	value = "Nicole" />
+            <input type = "text"
+               	id = "lastname"
+               	value = "Frommer" />
             <!-- <br><small>First name Middle name Last name</small> -->
         </p>
     </fieldset>
     <fieldset>
-    	<legend><b>Company Info</b></legend>
+    	<legend><b>Contact Info</b></legend>
     	<p>
     		<input type = "text"
                	id = "phonenumber"
-               	placeholder = "Cell phone number" />
+               	value = "301-503-8054" />
             <!-- <br><small>Cell phone number</small><br><br> -->
             <input type = "text"
                	id = "email"
-               	placeholder = "Email" />
+               	value = "cfromme@clemson.edu" />
             <!-- <br><small>Email</small><br><br> -->
-            <ins><br><br>Company Mailing Address(if multiple, choose the headquarter)</ins>
+            <ins><br><br>Mailing Address</ins>
             <p>
             	<input type = "text"
                		id = "streetaddress"
-               		placeholder = "Street address" />
+               		value = "118F University Village Drive" />
             	<!-- <br><small>Street Address</small><br><br> -->
             	<input type = "text"
                		id = "city"
-               		placeholder = "City" />
+               		value = "Central" />
               <select id="state">
-            <option value = "Select">Select</option>
   					<option value="AL">Alabama - AL</option>
   					<option value="AK">Alaska - AK</option>
   					<option value="AZ">Arizona - AZ</option>
@@ -137,7 +133,7 @@ img {
   					<option value="OR">Oregon - OR</option>
   					<option value="PA">Pennsylvania - PA</option>
   					<option value="RI">Rhode Island - RI</option>
-  					<option value="SC">South Carolina - SC</option>
+  					<option value="SC"selected>South Carolina - SC selected</option>
   					<option value="SD">South Dakota - SD</option>
   					<option value="TN">Tennessee - TN</option>
   					<option value="TX">Texas - TX</option>
@@ -151,8 +147,33 @@ img {
 				</select>
                 <input type = "text"
                		id = "zipcode"
-               		placeholder = "Zip code" />
+               		value = "29630" />
                	<!-- <br><small>City State Zip Code</small><br><br> -->
+            </p>
+            <ins>Emergency Contact</ins>
+            <p>
+            	<input type = "text"
+               		id = "firstname"
+               		value = "Claire" />
+            	<input type = "text"
+               		id = "middlename"
+               		value = "Nicole" />
+               	<input type = "text"
+               		id = "lastname"
+               		value = "Frommer" />
+               	<!-- <br><small>First name Middle name Last name</small><br><br> -->
+               	<input type = "text"
+               		id = "phonenumber"
+               		value = "301-503-8054" />
+            	<!-- <br><small>Cell phone number</small>--><br><br>
+            	<input type = "text"
+               		id = "email"
+               		value = "cfromme@clemson.edu" />
+            	<!-- <br><small>Email</small><br><br> -->
+            	<input type = "text"
+            		id = "relationship"
+            		value = "self" />
+            	<!-- <br><small>Relationship</small><br><br> -->
             </p>
         </p>
     </fieldset>
