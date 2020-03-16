@@ -7,7 +7,21 @@ body{
 
 .left-box{
 	width: 320px;
-	height: 420px;
+	height: 600px;
+	background: #000000;
+	color: #fff;
+	top:50%;
+	left:50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+	text-align: center;
+}
+
+.login-box{
+	width: 320px;
+	height: 450px;
 	background: #000000;
 	color: #fff;
 	top:50%;
@@ -45,13 +59,16 @@ body{
 
 .pass-box {
 	margin-bottom: 20px;
+	text-align: center;
 }
 
 h1{
+	position: relative;
+	top: -30px;
 	margin: 0;
-	padding: 0 0 20px;
+	padding: 0 0 10px;
 	text-align: center;
-	font-size: 22px;
+	font-size: 28px;
 }
 
 .left-box p{
@@ -59,11 +76,6 @@ h1{
 	padding: 0;
 	font-weight: bold;
 	text-align: left;
-}
-
-.left-box input{
-	width: 100%;
-	margin-bottom: 20px;
 }
 
 .left-box input[type="text"], input[type="password"] {
@@ -74,6 +86,27 @@ h1{
 	height: 40px;
 	color:#fff;
 	font-size:16px;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.login-box p{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	text-align: left;
+}
+
+.login-box input[type="text"], input[type="password"] {
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color:#fff;
+	font-size:16px;
+	width: 100%;
+	margin-bottom: 20px;
 }
 
 .pass-box input[type="text"] {
@@ -83,18 +116,28 @@ h1{
 	height: 40px;
 	color:#fff;
 	font-size:16px;
+	width: 100%;
+	margin-bottom: 20px;
 }
 
-input[type="submit"] {
+.para-text p{
+	margin: 10px;
+	padding: 0 0 10px;
+	text-align: center;
+	font-size:18px;
+}
+
+button[type="submit"] {
+	margin: 10px;
 	border: none;
 	outline: none;
 	height: 40px;
 	background: #fb2525;
 	color:#fff;
-	font-size:18px;
+	font-size:20px;
 }
 
-input[type="submit"]:hover
+button[type="submit"]:hover
 {
 	cursor: pointer;
 	background: #ffc107;
@@ -103,6 +146,13 @@ input[type="submit"]:hover
 }
 
 .left-box a{
+	text-decoration: none;
+	font-size:12px;
+	line-height: 20px;
+	color: darkgrey;
+}
+
+.login-box a{
 	text-decoration: none;
 	font-size:12px;
 	line-height: 20px;

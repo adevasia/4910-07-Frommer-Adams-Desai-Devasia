@@ -17,6 +17,14 @@ if (isset($_POST['signup_user'])) {
   $password_1 = mysqli_real_escape_string($db, $_POST['password']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password2']);
 
+  if (empty($_POST['Driver']) && empty($_POST['Sponser'])) {
+	  $role = mysqli_real_escape_string($db, $_POST['Administrator']);
+  }elseif(empty($_POST['Sponser']) && empty($_POST['Administrator'])) {
+	  $role = mysqli_real_escape_string($db, $_POST['Driver']);
+  }else{
+	  $role = mysqli_real_escape_string($db, $_POST['Sponser']);
+  }
+	
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
   if (empty($username)) { array_push($errors, "Username is required"); }
@@ -25,6 +33,7 @@ if (isset($_POST['signup_user'])) {
   if ($password_1 != $password_2) {
 	array_push($errors, "The two passwords do not match");
   }
+  if(empty($role)) { array_push($errors, "Choose: Driver/Sponsor/Administrator");}
 
   // first check the database to make sure 
   // a user does not already exist with the same username and/or email
@@ -46,8 +55,8 @@ if (isset($_POST['signup_user'])) {
   if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO users (username, email, password) 
-  			  VALUES('$username', '$email', '$password')";
+  	$query = "INSERT INTO users (username, email, password, role) 
+  			  VALUES('$username', '$email', '$password', '$role')";
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are now logged in";
