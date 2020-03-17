@@ -10,7 +10,7 @@ body {
 .container {
 	width: calc(2*250px);
 	height: calc(2*250px);
-	margin: 100px auto;
+	margin: auto;
 	box-shadow: 0 0 10px rgba(0,0,0,.6);
 }
 
