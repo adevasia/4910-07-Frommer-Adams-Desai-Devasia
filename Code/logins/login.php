@@ -8,6 +8,7 @@
 		<div class = "login-box">
 			<h1 align="center"> Login </h1>
 			<form action="login.php" method="post">
+				<?php include('../errors.php');?>
 				<p>Email</p>
 				<input type = "text" name = "username" placeholder="Enter your username"/>
 				<p>Password</p>

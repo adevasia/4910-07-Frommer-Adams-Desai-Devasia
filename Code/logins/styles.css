@@ -21,7 +21,11 @@ body{
 
 .login-box{
 	width: 320px;
+<<<<<<< HEAD:Code/styles.css
 	height: 400px;
+=======
+	height: 450px;
+>>>>>>> origin/master:Code/logins/styles.css
 	background: #000000;
 	color: #fff;
 	top:50%;

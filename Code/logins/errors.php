@@ -5,3 +5,8 @@
   	<?php endforeach ?>
   </div>
 <?php  endif ?>
+<html>
+	<head>
+	      <link rel="stylesheet" type="text/css" href="errorStyles.css">
+	</head>
+</html>

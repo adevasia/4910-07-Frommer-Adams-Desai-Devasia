@@ -33,7 +33,7 @@ if (isset($_POST['signup_user'])) {
   if ($password_1 != $password_2) {
 	array_push($errors, "The two passwords do not match");
   }
-  if(empty($role)) { array_push($errors, "Choose your role: driver, sponsor or Administrator");}
+  if(empty($role)) { array_push($errors, "Choose: Driver/Sponsor/Administrator");}
 
   // first check the database to make sure 
   // a user does not already exist with the same username and/or email

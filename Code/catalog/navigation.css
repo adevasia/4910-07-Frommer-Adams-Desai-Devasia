@@ -1,6 +1,5 @@
 .style {
-	margin: auto;
-	padding: 80px;
+
 	font-family: sans-serif;
 	text-align: center;
 	background: #ffff;
@@ -11,10 +10,12 @@
 .style form {
 	color: #fff;
 }
-.style ul {
+ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+	top:0;
+	width: 100%;
 	overflow: hidden;
 	background-color: #fb2525;
 }
@@ -35,22 +36,7 @@
 	display: inline;
 	vertical-align: -35px;
 }
-/* Navbar container */
-.navbar {
-overflow: hidden;
-background-color: #333;
-font-family: Arial;
-}
 
-/* Links inside the navbar */
-.navbar a {
-float: right;
-font-size: 16px;
-color: white;
-text-align: match parent;
-padding: 14px 16px;
-text-decoration: none;
-}
 
 /* The dropdown container */
 .dropdown {
@@ -97,7 +83,6 @@ background-color: whitesmoke;
 display: none;
 position: absolute;
 background-color: #f9f9f9;
-min-width: 82px;
 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 z-index: 1;
 }
@@ -109,7 +94,7 @@ color: black;
 padding: 12px 16px;
 text-decoration: none;
 display: block;
-text-align: left;
+text-align: right;
 }
 
 /* Add a grey background color to dropdown links on hover */
@@ -119,5 +104,10 @@ background-color: #ddd;
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
-display: block;
+	position: fixed; /* containing block for positioning */
+    display: block; /* to fix IE's doubled float-margin bug */
+    float: right;
+    list-style: none;
+	padding: 0;
+	margin-left: -25px;
 }
