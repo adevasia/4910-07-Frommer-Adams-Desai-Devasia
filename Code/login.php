@@ -5,7 +5,7 @@
 		<link rel="stylesheet" type="text/css" href="styles.css">
 	</head>
 <body>
-		<div class = "left-box">
+		<div class = "login-box">
 			<h1 align="center"> Login </h1>
 			<form action="login.php" method="post">
 				<p>Email</p>
