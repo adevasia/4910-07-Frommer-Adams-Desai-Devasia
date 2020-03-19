@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php include('profile.php');?>
+
 <html>
 <head>
 <title>Profile Page</title>
@@ -62,14 +63,14 @@ img {
     	<legend><b>Personal Info</b></legend>
     	<p>
           	<input type = "text"
-               	id = "firstname"
-               	placeholder = "First name" />
+               	name = "firstname"
+               	placeholder = "First name" value="<?php echo $firstname; ?>"/>
             <input type = "text"
-               	id = "middlename"
-               	placeholder = "Middle name" />
+               	name = "middlename"
+               	placeholder = "Middle name" value="<?php echo $middlename; ?>"/>
             <input type = "text"
-               	id = "lastname"
-               	placeholder = "Last name" /><br><br>
+               	name = "lastname"
+               	placeholder = "Last name" value="<?php echo $lastname; ?>"/><br><br>
 	    <select id="Month">
               <option value="Month">Month</option>
               <option value="January">January</option>
@@ -120,8 +121,8 @@ img {
               <option value="seven">31</option>
             </select>
             <input type = "text"
-                id = "year"
-                placeholder = "Year" /><br><br>
+                name = "year"
+                placeholder = "Year" value="<?php echo $year; ?>"/><br><br>
             <!-- <br><small>First name Middle name Last name</small> -->
         </p>
     </fieldset>
@@ -129,22 +130,22 @@ img {
     	<legend><b>Contact Info</b></legend>
     	<p>
     		<input type = "text"
-               	id = "phonenumber"
-               	placeholder = "Cell phone number" />
+               	name = "phonenumber"
+               	placeholder = "Cell phone number" value="<?php echo $phone; ?>"/>
             <!-- <br><small>Cell phone number</small><br><br> -->
             <input type = "text"
-               	id = "email"
-               	placeholder = "Email" />
+               	name = "email"
+               	placeholder = "Email"/>
             <!-- <br><small>Email</small><br><br> -->
             <ins><br><br>Mailing Address</ins>
             <p>
             	<input type = "text"
-               		id = "streetaddress"
-               		placeholder = "Street address" />
+               		name = "streetaddress"
+               		placeholder = "Street address" value="<?php echo $street; ?>"/>
             	<!-- <br><small>Street Address</small><br><br> -->
             	<input type = "text"
-               		id = "city"
-               		placeholder = "City" />
+               		name = "city"
+               		placeholder = "City" value="<?php echo $city; ?>"/>
               <select id="state">
 		      			<option value="Sel">Select</option>
   					<option value="AL">Alabama - AL</option>
@@ -200,36 +201,37 @@ img {
 				</select>
                 <input type = "text"
                		id = "zipcode"
-               		placeholder = "Zip code" />
+               		placeholder = "Zip code" value="<?php echo $zipcode; ?>"/>
                	<!-- <br><small>City State Zip Code</small><br><br> -->
             </p>
             <ins>Emergency Contact</ins>
             <p>
             	<input type = "text"
-               		id = "firstname"
+               		name = "firstname"
                		placeholder = "First name" />
             	<input type = "text"
-               		id = "middlename"
+               		name = "middlename"
                		placeholder = "Middle name" />
                	<input type = "text"
-               		id = "lastname"
+               		name = "lastname"
                		placeholder = "Last name" />
                	<!-- <br><small>First name Middle name Last name</small><br><br> -->
                	<input type = "text"
-               		id = "phonenumber"
+               		name = "phonenumber"
                		placeholder = "Cell phone number" />
             	<!-- <br><small>Cell phone number</small>--><br><br>
             	<input type = "text"
-               		id = "email"
+               		name = "email"
                		placeholder = "Email" />
             	<!-- <br><small>Email</small><br><br> -->
             	<input type = "text"
-            		id = "relationship"
+            		name = "relationship"
             		placeholder = "Relationship" />
             	<!-- <br><small>Relationship</small><br><br> -->
             </p>
         </p>
     </fieldset>
+	<button type="submit" name = "submit">Submit</button>
 </form>
 
 </body>
