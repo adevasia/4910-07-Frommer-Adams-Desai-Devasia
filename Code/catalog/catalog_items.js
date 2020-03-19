@@ -17,3 +17,7 @@ function gridView() {
     elements[i].style.width = "50%";
   }
 }
+
+ function myFunc() { 
+           window.location.href="search_catalog.php"; 
+ } 

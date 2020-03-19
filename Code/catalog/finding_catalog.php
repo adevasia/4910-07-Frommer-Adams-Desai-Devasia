@@ -6,7 +6,7 @@ $endpoint = 'http://svcs.ebay.com/services/search/FindingService/v1';  // URL to
 $version = '1.0.0';  // API version supported by your application
 $appid = 'AliciaDe-Finding-PRD-0ca8111fb-2e400c91';  // Replace with your own AppID
 $globalid = 'EBAY-US';  // Global ID of the eBay site you want to search (e.g., EBAY-DE)
-$query = 'bob burgers';  // You may want to supply your own query
+$query= $_POST['search2'];   // You may want to supply your own query
 $safequery = urlencode($query);  // Make the query URL-friendly
 // Create a PHP array of the item filters you want to use in your request
 $i = '0';  // Initialize the item filter index to 0
@@ -89,23 +89,3 @@ else {
 }
 
 ?>
-<!-- Build the HTML page with values from the call response -->
-<html>
-<head>
-<title>eBay Search Results for <?php echo $query; ?></title>
-<style type="text/css">body { font-family: arial,sans-serif;} </style>
-</head>
-<body>
-
-<h1>eBay Search Results for <?php echo $query; ?></h1>
-
-<table>
-<tr>
-  <td>
-    <?php echo $results;?>
-  </td>
-</tr>
-</table>
-
-</body>
-</html>
