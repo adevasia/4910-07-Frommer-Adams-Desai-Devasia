@@ -1,0 +1,113 @@
+.style {
+
+	font-family: sans-serif;
+	text-align: center;
+	background: #ffff;
+}
+.style fieldset {
+	color: #fff;	
+}
+.style form {
+	color: #fff;
+}
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	top:0;
+	width: 100%;
+	overflow: hidden;
+	background-color: #fb2525;
+}
+
+.style li {
+	float: center;
+}
+
+.style li a {
+	display: inline;
+}
+
+.style img {
+  border-radius: 50%;
+}
+
+.pointer{
+	display: inline;
+	vertical-align: -35px;
+}
+
+
+/* The dropdown container */
+.dropdown {
+float: right;
+overflow: hidden;
+}
+
+
+/* Dropdown button */
+.dropdown .dropbtn {
+font-size: 16px;
+border: none;
+outline: none;
+color: white;
+padding: 14px 16px;
+background-color: inherit;
+font-family: inherit; /* Important for vertical align on mobile phones */
+margin: 0; /* Important for vertical align on mobile phones */
+cursor: pointer;
+}
+
+
+/* Dropdown button */
+.dropbtn2 {
+font-size: 16px;
+border: none;
+outline: none;
+color: white;
+float: right;
+padding: 14px 16px;
+background-color: inherit;
+font-family: inherit; /* Important for vertical align on mobile phones */
+margin: 0; /* Important for vertical align on mobile phones */
+cursor: pointer;
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+background-color: whitesmoke;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+float: none;
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+text-align: right;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+	position: fixed; /* containing block for positioning */
+    display: block; /* to fix IE's doubled float-margin bug */
+    float: right;
+    list-style: none;
+	padding: 0;
+	margin-left: -25px;
+}
