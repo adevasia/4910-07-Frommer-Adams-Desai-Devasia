@@ -19,13 +19,9 @@ body{
 	text-align: center;
 }
 
-.login-box{
+.login-page{
 	width: 320px;
-<<<<<<< HEAD:Code/styles.css
-	height: 400px;
-=======
 	height: 450px;
->>>>>>> origin/master:Code/logins/styles.css
 	background: #000000;
 	color: #fff;
 	top:50%;
@@ -94,14 +90,14 @@ h1{
 	margin-bottom: 20px;
 }
 
-.login-box p{
+.login-page p{
 	margin: 0;
 	padding: 0;
 	font-weight: bold;
 	text-align: left;
 }
 
-.login-box input[type="text"], input[type="password"] {
+.login-page input[type="text"], input[type="password"] {
 	border: none;
 	border-bottom: 1px solid #fff;
 	background: transparent;
@@ -156,7 +152,7 @@ button[type="submit"]:hover
 	color: darkgrey;
 }
 
-.login-box a{
+.login-page a{
 	text-decoration: none;
 	font-size:12px;
 	line-height: 20px;

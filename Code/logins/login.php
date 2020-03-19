@@ -5,11 +5,12 @@
 		<link rel="stylesheet" type="text/css" href="styles.css">
 	</head>
 <body>
-		<div class = "login-box">
+		<div id="login-box">
+		<div class = "login-page">
 			<h1 align="center"> Login </h1>
 			<form action="login.php" method="post">
-				<?php include('../errors.php');?>
-				<p>Email</p>
+				<?php include('errors.php');?>
+				<p>Username</p>
 				<input type = "text" name = "username" placeholder="Enter your username"/>
 				<p>Password</p>
 				<input type = "password" name = "password" placeholder="Enter your password"/>
@@ -23,6 +24,7 @@
 				</p>
 				</div>				
 			</form>
+		</div>
 	</div>
 </body>
 </html>
