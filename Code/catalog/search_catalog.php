@@ -4,7 +4,7 @@
 <html>
 <head>
 <title>Catalog</title>
-<link rel="stylesheet" type="text/css" href="navigation.css">
+<link rel="stylesheet" type="text/css" href="../navigation.css">
 <link rel="stylesheet" type="text/css" href="search.css">
 <link rel="stylesheet" type="text/css" href="catalog_items.css">
 
