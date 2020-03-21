@@ -69,7 +69,7 @@ img {
 <p>
 
 <form action="adminprof.php" method="post">
-<?php include('../logins/errors.php');?> 
+<?php include('../errors.php');?> 
     <fieldset>
     	<legend><b>General Info</b></legend>
     	<p>

@@ -71,7 +71,7 @@ img {
 <p>
 
 <form action="sponsorprof.php" method="post">
-<?php include('../logins/errors.php');?> 
+<?php include('../errors.php');?> 
     <fieldset>
     	<legend><b>Personal Info</b></legend>
     	<p>
