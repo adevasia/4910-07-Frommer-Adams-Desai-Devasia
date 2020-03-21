@@ -1,4 +1,4 @@
-<?php include('server.php')?>
+<?php include('../server.php')?>
 <html>
 	<head>
 		<title> Login Form Design</title>

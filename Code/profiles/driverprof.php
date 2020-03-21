@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+<?php include('../server.php');?>
+
 <html>
 <head>
-<title>Driver's Profile Page</title>
+<title>Profile Page</title>
 <link rel="stylesheet" type="text/css" href="../logins/styles.css">
-<link rel="stylesheet" type="text/css" href="../navigation.css">
+<link rel="stylesheet" type="text/css" href="../catalog/navigation.css">
 <style>
 
 body {
@@ -26,6 +27,14 @@ ul {
 	overflow: hidden;
 	background-color: #fb2525;
 }
+li {
+    float: right;
+}
+
+li a {
+    display: block;
+    padding: 12px;
+}
 img {
   border-radius: 50%;
 }
@@ -40,10 +49,9 @@ img {
 			<button class="dropbtn"><a href="driverprof.html"><img src="profpic.png" alt="Avatar" width="50" height="50" >
 			</a></button>
 			<div class="dropdown-content">
-				<a href="driver_home.html">HOME</a>
-				<a href="../catalog/catalog_home.php">CATALOG</a>
+				<a href="../catalog/catalog.html">CATALOG</a>
 				<a href="#">SPONSORS</a>
-				<a href="../login.html">LOGOUT</a>
+				<a href="../logins/login.php">LOGOUT</a>
 			</div>
 		</div>
     
@@ -58,19 +66,20 @@ img {
 	</form>
 <p>
 
-<form>
-    <fieldset>
+<form action="driverprof.php" method="post">
+<?php include('../logins/errors.php');?>  
+  <fieldset>
     	<legend><b>Personal Info</b></legend>
     	<p>
           	<input type = "text"
-               	id = "firstname"
-               	placeholder = "First name" />
+               	name = "firstname"
+               	placeholder = "First name" value="<?php echo $_SESSION['fname']; ?>"/>
             <input type = "text"
-               	id = "middlename"
-               	placeholder = "Middle name" />
+               	name = "middlename"
+               	placeholder = "Middle name" value="<?php echo $_SESSION['mname']; ?>"/>
             <input type = "text"
-               	id = "lastname"
-               	placeholder = "Last name" /><br><br>
+               	name = "lastname"
+               	placeholder = "Last name" value="<?php echo $_SESSION['lname']; ?>"/><br><br>
 	    <select id="Month">
               <option value="Month">Month</option>
               <option value="January">January</option>
@@ -121,31 +130,27 @@ img {
               <option value="seven">31</option>
             </select>
             <input type = "text"
-                id = "year"
-                placeholder = "Year" /><br><br>
-            <!-- <br><small>First name Middle name Last name</small> -->
+                name = "year"
+                placeholder = "Year" value="<?php echo $_SESSION['byear']; ?>"/><br><br>
         </p>
     </fieldset>
     <fieldset>
     	<legend><b>Contact Info</b></legend>
     	<p>
     		<input type = "text"
-               	id = "phonenumber"
-               	placeholder = "Cell phone number" />
-            <!-- <br><small>Cell phone number</small><br><br> -->
+               	name = "phonenumber"
+               	placeholder = "Cell phone number" value="<?php echo $_SESSION['phone']; ?>"/>
             <input type = "text"
-               	id = "email"
-               	placeholder = "Email" />
-            <!-- <br><small>Email</small><br><br> -->
+               	name = "email"
+               	placeholder = "Email" value="<?php echo $_SESSION['email']; ?>"/>
             <ins><br><br>Mailing Address</ins>
             <p>
             	<input type = "text"
-               		id = "streetaddress"
-               		placeholder = "Street address" />
-            	<!-- <br><small>Street Address</small><br><br> -->
+               		name = "streetaddress"
+               		placeholder = "Street address" value="<?php echo $_SESSION['street']; ?>"/>
             	<input type = "text"
-               		id = "city"
-               		placeholder = "City" />
+               		name = "city"
+               		placeholder = "City" value="<?php echo $_SESSION['city']; ?>"/>
               <select id="state">
 		      			<option value="Sel">Select</option>
   					<option value="AL">Alabama - AL</option>
@@ -201,36 +206,11 @@ img {
 				</select>
                 <input type = "text"
                		id = "zipcode"
-               		placeholder = "Zip code" />
-               	<!-- <br><small>City State Zip Code</small><br><br> -->
-            </p>
-            <ins>Emergency Contact</ins>
-            <p>
-            	<input type = "text"
-               		id = "firstname"
-               		placeholder = "First name" />
-            	<input type = "text"
-               		id = "middlename"
-               		placeholder = "Middle name" />
-               	<input type = "text"
-               		id = "lastname"
-               		placeholder = "Last name" />
-               	<!-- <br><small>First name Middle name Last name</small><br><br> -->
-               	<input type = "text"
-               		id = "phonenumber"
-               		placeholder = "Cell phone number" />
-            	<!-- <br><small>Cell phone number</small>--><br><br>
-            	<input type = "text"
-               		id = "email"
-               		placeholder = "Email" />
-            	<!-- <br><small>Email</small><br><br> -->
-            	<input type = "text"
-            		id = "relationship"
-            		placeholder = "Relationship" />
-            	<!-- <br><small>Relationship</small><br><br> -->
+               		placeholder = "Zip code" value="<?php echo $_SESSION['zipcode']; ?>"/>
             </p>
         </p>
     </fieldset>
+	<button type="submit" name = "submit">Update</button>
 </form>
 
 </body>
