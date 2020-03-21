@@ -62,7 +62,7 @@
 <table class="column">
   <tr>
   <td >
-    <php echo $results?>
+    <?php echo $results?>
   </td>
 </tr>
 </table>
