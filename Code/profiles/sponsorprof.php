@@ -1,3 +1,5 @@
+<?php include('../server.php');?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,48 +66,46 @@ img {
 <p>
 	<img src="profpic.png" alt="Avatar" width="200" height="200" align="middle">
 	<form>
-  		<input type="radio" name="type" value="driver" checked> Driver<br>
-  		<input type="radio" name="type" value="sponsor"> Sponsor<br>
-  		<input type="radio" name="type" value="admin"> Administrator  
+  		<input type="radio" name="type" value="sponsor"> Sponsor<br> 
 	</form>
 <p>
 
-<form>
+<form action="sponsorprof.php" method="post">
+<?php include('../errors.php');?> 
     <fieldset>
     	<legend><b>Personal Info</b></legend>
     	<p>
-          	<input type = "text"
-               	id = "firstname"
-               	placeholder = "First name" />
             <input type = "text"
-               	id = "middlename"
-               	placeholder = "Middle name" />
+                name = "firstname"
+                placeholder = "First name" value="<?php echo $_SESSION['fnameS']; ?>"/>
             <input type = "text"
-               	id = "lastname"
-               	placeholder = "Last name" />
-            <!-- <br><small>First name Middle name Last name</small> -->
+                name = "middlename"
+                placeholder = "Middle name" value="<?php echo $_SESSION['mnameS']; ?>"/>
+            <input type = "text"
+                name = "lastname"
+                placeholder = "Last name" value="<?php echo $_SESSION['lnameS']; ?>"/>
         </p>
     </fieldset>
     <fieldset>
     	<legend><b>Contact Info</b></legend>
     	<p>
     		<input type = "text"
-               	id = "phonenumber"
-               	placeholder = "Cell phone number" />
+               	name = "phonenumber"
+               	placeholder = "Cell phone number" value="<?php echo $_SESSION['phoneS']; ?>"/>
             <!-- <br><small>Cell phone number</small><br><br> -->
             <input type = "text"
-               	id = "email"
-               	placeholder = "Email" />
+               	name = "email"
+               	placeholder = "Email" value="<?php echo $_SESSION['emailS']; ?>"/>
             <!-- <br><small>Email</small><br><br> -->
             <ins><br><br>Mailing Address</ins>
             <p>
             	<input type = "text"
-               		id = "streetaddress"
-               		placeholder = "Street address" />
+               		name = "streetaddress"
+               		placeholder = "Street address" value="<?php echo $_SESSION['streetS']; ?>"/>
             	<!-- <br><small>Street Address</small><br><br> -->
             	<input type = "text"
-               		id = "city"
-               		placeholder = "City" />
+               		name = "city"
+               		placeholder = "City" value="<?php echo $_SESSION['cityS']; ?>"/>
               <select id="state">
   					<option value="AL">Alabama - AL</option>
   					<option value="AK">Alaska - AK</option>
@@ -159,49 +159,13 @@ img {
   					<option value="WY">Wyoming - WY</option>
 				</select>
                 <input type = "text"
-               		id = "zipcode"
-               		placeholder = "Zip code" />
-               	<!-- <br><small>City State Zip Code</small><br><br> -->
-            </p>
-            <ins>Emergency Contact</ins>
-            <p>
-            	<input type = "text"
-               		id = "firstname"
-               		placeholder = "First name" />
-            	<input type = "text"
-               		id = "middlename"
-               		placeholder = "Middle name" />
-               	<input type = "text"
-               		id = "lastname"
-               		placeholder = "Last name" />
-               	<!-- <br><small>First name Middle name Last name</small><br><br> -->
-               	<input type = "text"
-               		id = "phonenumber"
-               		placeholder = "Cell phone number" />
-            	<!-- <br><small>Cell phone number</small>--><br><br>
-            	<input type = "text"
-               		id = "email"
-               		placeholder = "Email" />
-            	<!-- <br><small>Email</small><br><br> -->
-            	<input type = "text"
-            		id = "relationship"
-            		placeholder = "Relationship" />
-            	<!-- <br><small>Relationship</small><br><br> -->
+               		name = "zipcode"
+               		placeholder = "Zip code" value="<?php echo $_SESSION['zipcodeS']; ?>"/>
             </p>
         </p>
     </fieldset>
+    <button type="submit" name = "submitSpons">Update</button>
 </form>
 
-<form>
-    <fieldset>
-      <legend><b>Sponsored Drivers</b></legend>
-      <p>
-        <ol>
-          <li><a href="../clairepage.html">Claire Frommer</a></li><br>
-          <li><a href="../login.html">Silas Adams</a></li><br>
-          <li><a href="../login.html">Alicia Deasia</a></li><br>
-          <li><a href="../login.html">Aneri Desai</a></li><br>
-        </ol> 
-      </p>
 </body>
 </html>

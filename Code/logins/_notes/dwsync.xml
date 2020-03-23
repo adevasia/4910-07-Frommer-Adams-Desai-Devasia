@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="errorStyles.css" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3667403419" remote="3667403458" Dst="-1" />
@@ -19,3 +20,6 @@
 <file name="errorsStyles.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132292229914681216" remote="132294716610000000" Dst="2" />
 <file name="errors.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132292229914641237" remote="132294716610000000" Dst="2" />
 </dwsync>
+=======
+<?xml version="1.0" encoding="utf-8" ?><dwsync><file name="server.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3667564818" remote="3667564857" Dst="-1" /><file name="styles.css" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3667500476" remote="3667500760" Dst="-1" /><file name="signup.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3667561965" remote="3667561974" Dst="-1" /><file name="login.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3667561962" remote="3667561974" Dst="-1" /></dwsync>
+>>>>>>> origin/master

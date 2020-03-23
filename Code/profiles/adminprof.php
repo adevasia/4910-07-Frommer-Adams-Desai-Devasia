@@ -1,3 +1,5 @@
+<?php include('../server.php');?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +55,7 @@ img {
                 <a href="#">SPONSOR</a>
                 <a href="#">DRIVER</a>
                 <a href="#">ANALYTIC</a>
-                <a href="../login.html">LOGOUT</a>
+                <a href="../logins/login.php">LOGOUT</a>
             </div>
         </div>
     
@@ -66,19 +68,20 @@ img {
 	</form>
 <p>
 
-<form>
+<form action="adminprof.php" method="post">
+<?php include('../errors.php');?> 
     <fieldset>
     	<legend><b>General Info</b></legend>
     	<p>
           	<input type = "text"
-               	id = "firstname"
-               	placeholder = "First name" />
+               	name = "firstname"
+               	placeholder = "First name" value="<?php echo $_SESSION['fnameA']; ?>"/>
             <input type = "text"
-                id = "MiddleName"
-                placeholder = "Middle name" />
+                name = "middlename"
+                placeholder = "Middle name" value="<?php echo $_SESSION['mnameA']; ?>"/>
             <input type = "text"
-                id = "lastname"
-                placeholder = "Last name" /><br><br>
+                name = "lastname"
+                placeholder = "Last name" value="<?php echo $_SESSION['lnameA']; ?>"/><br><br>
             <select id="Month">
               <option value="Month">Month</option>
               <option value="January">January</option>
@@ -129,14 +132,14 @@ img {
               <option value="seven">31</option>
             </select>
             <input type = "text"
-                id = "year"
-                placeholder = "Year" /><br><br>
+                name = "year"
+                placeholder = "Year" value="<?php echo $_SESSION['byearA']; ?>"/><br><br>
             <input type = "text"
-                id = "deparment"
-                placeholder = "Department" /><br><br>
-            <!-- <br><small>First name Middle name Last name</small> -->
+                name = "deparment"
+                placeholder = "Department" value="<?php echo $_SESSION['departmentA']; ?>"/><br><br>
         </p>
     </fieldset>
+    <button type="submit" name = "submitAdmin">Update</button>
 </form>
 
 </body>

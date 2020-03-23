@@ -1,4 +1,4 @@
-<?php include('server.php');?>
+<?php include('../server.php');?>
 
 <html>
 	<head>
@@ -18,7 +18,7 @@
 			<div class = "left-box">
 			<h1 align="center"> Sign up </h1>
 			<form action="signup.php" method="post">
-				<?php include('errors.php');?>
+				<?php include('../errors.php');?>
 				<input type = "text" name = "username" placeholder="Username" value="<?php echo $username; ?>"/>
 				<input type = "text" name = "email" placeholder="Email" value="<?php echo $email; ?>"/>
 				<input type = "password" name = "password" placeholder="Password"/>

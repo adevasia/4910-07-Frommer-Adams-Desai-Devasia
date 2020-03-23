@@ -10,6 +10,11 @@ $errors = array();
 // connect to the database
 $db = mysqli_connect("instance1.cxuvlwohim3v.us-east-1.rds.amazonaws.com", "master", "password", "cloud337");
 
+// check connection
+if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
+} 
+
 // REGISTER USER
 if (isset($_POST['signup_user'])) {
   // receive all input values from the form
@@ -82,9 +87,9 @@ if (isset($_POST['login_user'])) {
 	$user = mysqli_fetch_assoc($results);
 	  
   	if (mysqli_num_rows($results) == 1) {
-  	  /*$_SESSION['username'] = $username;
-  	  $_SESSION['success'] = "You are now logged in";
-  	  header('location: index.php');*/
+
+	  $_SESSION['username'] = $username;
+		
 	  if($user['role'] === "Driver"){
 		  header('location: ../profiles/driver_home.html');
 	  }elseif($user['role'] === "Sponsor"){
@@ -98,6 +103,33 @@ if (isset($_POST['login_user'])) {
   		array_push($errors, "Wrong username/password combination");
   	}
   }
+}
+
+//save profile information
+if (isset($_POST['submit'])) {
+
+  $firstname = mysqli_real_escape_string($db, $_POST['firstname']);
+  $middlename = mysqli_real_escape_string($db, $_POST['middlename']);
+  $lastname = mysqli_real_escape_string($db, $_POST['lastname']);
+  $year = mysqli_real_escape_string($db, $_POST['year']);
+  $phone = mysqli_real_escape_string($db, $_POST['phonenumber']);
+  $street = mysqli_real_escape_string($db, $_POST['streetaddress']);
+  $city = mysqli_real_escape_string($db, $_POST['city']);
+  $zipcode = mysqli_real_escape_string($db, $_POST['zipcode']);
+
+  /*$query = "SELECT * FROM users WHERE username='$uname'";
+  $results = mysqli_query($db, $query);
+  $user = mysqli_fetch_assoc($results);
+	
+  if (mysqli_num_rows($results) == 1) {*/
+	  $query = "UPDATE users SET fname = '$firstname', mname='$middlename', lname='$lastname', byear='$year',city='$city' WHERE username='$username'";
+	  mysql_query($query);
+	 header('location: driverprof.php');
+  //}
+ /*else{
+	 echo "error errror";
+ }*/
+
 }
 
 ?>
