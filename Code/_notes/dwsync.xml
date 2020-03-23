@@ -1,9 +1,13 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="navigation.css" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/Code/catalog/" local="132292229914824124" remote="132292323010000000" Dst="2" />
 <file name="navigation.css" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132292229914824124" remote="132294716540000000" Dst="2" />
 </dwsync>
+=======
+<?xml version="1.0" encoding="utf-8" ?><dwsync><file name="server.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/" local="3666785922" remote="3666793955" Dst="-1" /><file name="navigation.css" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/" local="3665588052" remote="3666793955" Dst="-1" /><file name="navigation.css" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3667500486" remote="3667500760" Dst="-1" /><file name="server.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3667665827" remote="3667665827" Dst="-1" /></dwsync>
+>>>>>>> origin/master
 =======
 <?xml version="1.0" encoding="utf-8" ?><dwsync><file name="server.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/" local="3666785922" remote="3666793955" Dst="-1" /><file name="navigation.css" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/" local="3665588052" remote="3666793955" Dst="-1" /><file name="navigation.css" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3667500486" remote="3667500760" Dst="-1" /><file name="server.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3667665827" remote="3667665827" Dst="-1" /></dwsync>
 >>>>>>> origin/master
