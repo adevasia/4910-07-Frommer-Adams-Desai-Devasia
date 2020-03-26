@@ -236,4 +236,60 @@ if (isset($_POST['submitAdmin'])) {
   else
     array_push($errors, "In another else id");
 }
+
+        if(isset($_POST['button1'])) {
+          $username = $_SESSION['username'];
+          mysqli_select_db($db, 'cloud337');
+  $id = "SELECT id FROM users WHERE username='$username'";
+  $results = mysqli_query($db, $id);
+
+  if(mysqli_num_rows($results) > 0){
+
+    $user = mysqli_fetch_assoc($results);
+    $user_id = $user['id']; 
+            echo "10 points added to your account"; 
+            // Increasing the current value with 10
+            mysqli_query($db,"UPDATE users SET points = (points + 10) WHERE ID=$user_id");
+
+        }} 
+        if(isset($_POST['button2'])) {
+        $username = $_SESSION['username']; 
+            mysqli_select_db($db, 'cloud337');
+  $id = "SELECT id FROM users WHERE username='$username'";
+  $results = mysqli_query($db, $id);
+
+  if(mysqli_num_rows($results) > 0){
+
+    $user = mysqli_fetch_assoc($results);
+    $user_id = $user['id'];
+            echo "20 points added to your account";
+            mysqli_query($db,"UPDATE users SET points = (points + 20) WHERE ID=$user_id");
+        }}
+        if(isset($_POST['button3'])) { 
+          $username = $_SESSION['username'];
+            mysqli_select_db($db, 'cloud337');
+  $id = "SELECT id FROM users WHERE username='$username'";
+  $results = mysqli_query($db, $id);
+
+  if(mysqli_num_rows($results) > 0){
+
+    $user = mysqli_fetch_assoc($results);
+    $user_id = $user['id'];
+            echo "30 points added to your account";
+            mysqli_query($db,"UPDATE users SET points = (points + 30) WHERE ID=$user_id");
+        }}
+        if(isset($_POST['button4'])) { 
+          $username = $_SESSION['username'];
+            mysqli_select_db($db, 'cloud337');
+  $id = "SELECT id FROM users WHERE username='$username'";
+  $results = mysqli_query($db, $id);
+
+  if(mysqli_num_rows($results) > 0){
+
+    $user = mysqli_fetch_assoc($results);
+    $user_id = $user['id'];
+            echo "40 points added to your account";
+            mysqli_query($db,"UPDATE users SET points = (points + 40) WHERE ID=$user_id");
+        } }
+
 ?>
