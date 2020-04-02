@@ -3,7 +3,6 @@
 <file name="worker.png" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3667253940" remote="3667400569" Dst="-1" />
 <file name="work.png" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3667253940" remote="3667400569" Dst="-1" />
 <file name="truck.png" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3667253940" remote="3667400569" Dst="-1" />
-<file name="sponsor_home.html" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3667253940" remote="3667400569" Dst="-1" />
 <file name="spons.jpg" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3667253940" remote="3667400570" Dst="-1" />
 <file name="profpic.png" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3667253940" remote="3667400570" Dst="-1" />
 <file name="manager.png" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3667253940" remote="3667400570" Dst="-1" />
@@ -18,7 +17,6 @@
 <file name="worker.png" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132292229915543720" remote="132294716540000000" Dst="2" />
 <file name="work.png" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132292229915503747" remote="132294716550000000" Dst="2" />
 <file name="truck.png" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132292229915464531" remote="132294716550000000" Dst="2" />
-<file name="sponsor_home.html" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132294737415971514" remote="132294757360000000" Dst="2" />
 <file name="spons.jpg" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132292229915223861" remote="132294716560000000" Dst="2" />
 <file name="smart-cart.png" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132292229915183873" remote="132294716560000000" Dst="2" />
 <file name="profpic.png" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132292229915143867" remote="132294716560000000" Dst="2" />
@@ -34,4 +32,9 @@
 <file name="sponsorprof.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132294737416211451" remote="132294757360000000" Dst="2" />
 <file name="driverprof.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132294737416251440" remote="132294757360000000" Dst="2" />
 <file name="adminprof.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132294737416386519" remote="132294757370000000" Dst="2" />
+<file name="passwordRedirect.html" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132294716560000000" remote="132294716560000000" Dst="2" />
+<file name="sponsor.html" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132294716550000000" remote="132294716550000000" Dst="2" />
+<file name="sponsor_catergories.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132302690097837490" remote="132302690240000000" Dst="2" />
+<file name="sponsor_catalog.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132303234785785808" remote="132303235010000000" Dst="2" />
+<file name="sponsor_home.html" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132299772431779058" remote="132299772610000000" Dst="2" />
 </dwsync>

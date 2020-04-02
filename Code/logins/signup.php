@@ -16,7 +16,7 @@
 <body>
 		<div id="login-box">
 			<div class = "left-box">
-			<h1 align="center"> Sign up </h1>
+<h1 align="center"> Sign up </h1>
 			<form action="signup.php" method="post">
 				<?php include('../errors.php');?>
 				<input type = "text" name = "username" placeholder="Username" value="<?php echo $username; ?>"/>
@@ -39,7 +39,7 @@
 				  }
 				?>
 				<label for="company">Select your company from below:</label>
-				<select name="company">
+				<select name="company" method="post">
 				<?php
 				while($rows = $resultSet->fetch_assoc())
 				{
