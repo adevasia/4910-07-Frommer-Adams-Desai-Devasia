@@ -7,6 +7,7 @@ $email    = "";
 $role     = "";
 $errors = array(); 
 
+
 // connect to the database
 $db = mysqli_connect("instance1.cxuvlwohim3v.us-east-1.rds.amazonaws.com", "master", "password", "cloud337");
 
@@ -22,9 +23,8 @@ if (isset($_POST['signup_user'])) {
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $password_1 = mysqli_real_escape_string($db, $_POST['password']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password2']);
-  $fname = "Ashen";
-  $mname = "Last";
-
+  
+	
   if (empty($_POST['Driver']) && empty($_POST['Sponsor'])) {
 	  $role = mysqli_real_escape_string($db, $_POST['Administrator']);
   }elseif(empty($_POST['Sponsor']) && empty($_POST['Administrator'])) {
