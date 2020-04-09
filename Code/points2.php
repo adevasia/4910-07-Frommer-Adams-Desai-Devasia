@@ -12,7 +12,8 @@ Behavior 2: <input type="text" name="behave2" /><br><br>
 Behavior 3: <input type="text" name="behave3" /><br><br>
 Behavior 4: <input type="text" name="behave4" /><br><br>
 
-<button type="submit" name = "submit">Login</button>
+Point ratio: <input type="text" name="pointratio" /> points = $1 <br><br>
+<button type="submit" name = "submit">Submit</button>
 
 </form>
 
