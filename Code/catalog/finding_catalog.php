@@ -30,7 +30,13 @@ if (isset($_POST['sponsor_done'])) {
 	//mysqli_query($db, $query);
 	*/
 	
-	$categoryArr = $_POST["Category"];	
+	$categoryArr = $_POST["Category"];
+	$category1 = $categoryArr[0];
+	$category2 = $categoryArr[1];
+	$category3 = $categoryArr[2];
+	$category4 = $categoryArr[3];
+	
+	
 	$_SESSION['category1'] = $categoryArr[0];
 	$_SESSION['category2'] = $categoryArr[1];
 	$_SESSION['category3'] = $categoryArr[2];
@@ -40,11 +46,7 @@ if (isset($_POST['sponsor_done'])) {
 	$_SESSION['minPrice'] = $_POST["Min"];
 
 	
-	$category1 = $categoryArr[0];
-	$category2 = $categoryArr[1];
-	$category3 = $categoryArr[2];
-	$category4 = $categoryArr[3];
-	
+
 	/*
 	$company_id = "SELECT id FROM company WHERE name='$company_name'";
 	
@@ -65,8 +67,7 @@ if (isset($_POST['sponsor_done'])) {
 error_reporting(E_ALL);  // Turn on all errors, warnings and notices for easier debugging
 
 // API request variables
-$endpoint = 'http://svcs.ebay.com/services/search/FindingService/v1';  // URL to call for finding api
-$shop_endpoint = 'http://open.api.ebay.com/shopping';
+$endpoint = 'https://svcs.ebay.com/services/search/FindingService/v1';  // URL to call for finding api
 
 
 $version = '1.0.0';  // API version supported by your application

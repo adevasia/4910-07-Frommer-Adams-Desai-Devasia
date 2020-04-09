@@ -1,3 +1,8 @@
+<!--
+Allows the sponsor to customize their catalog
+by choosing 4 categories and setting the min/max 
+price
+-->
 <?php include'../catalog/finding_catalog.php';?>
 
 <!DOCTYPE html>

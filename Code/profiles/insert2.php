@@ -1,6 +1,6 @@
 <?php
 session_start();
-//include('server.php');
+//include('../server.php');
 $db = mysqli_connect("instance1.cxuvlwohim3v.us-east-1.rds.amazonaws.com", "master", "password", "cloud337");
 
 // check connection

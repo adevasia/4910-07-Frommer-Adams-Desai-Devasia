@@ -19,15 +19,18 @@
 <ul>
 	<h2 class="pointer">POINTS: </h2>
 
-	 <div class="dropdown">
-          <button class="dropbtn"><a href="../profiles/driverprof.html"><img src="../profiles/profpic.png" alt="Avatar" width="50" height="50" >
-          </a></button>
-          <div class="dropdown-content">
-            <a href="catalog_home.php">CATALOG</a>
-            <a href="#">SPONSORS</a>
-            <a href="../logins/login.php">LOGOUT</a>
-          </div>
-        </div>
+	  <div class="dropdown">
+            <button class="dropbtn"><a href="driverprof.php"><img src="../profiles/profpic.png" alt="Avatar" width="50" height="50" >
+            </a></button>
+            <div class="dropdown-content">
+                <a href="../profiles/driver_home.html">HOME</a>
+                <a href="catalog_home.php">CATALOG</a>
+                <a href="../profiles/points.php">POINTS</a>
+                <a href="#">PURCHASES</a>
+                <a href="#">COMPANY</a>
+                <a href="../logins/login.php">LOGOUT</a>
+            </div>
+     </div>
 
 	<button class="dropbtn2"><li><a href="shoppingCart.html"><img src="cart.png" alt="Cart" width="50" height="50"  style="float: right;"></a></li></button>
 
@@ -52,7 +55,7 @@
 </form>
   
 <br style = “line-height:10”>
-<?php echo $query?>
+
 	
 <!-- Load Font Awesome Icon Library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
