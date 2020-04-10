@@ -23,6 +23,7 @@
 				<input type = "text" name = "email" placeholder="Email" value="<?php echo $email; ?>"/>
 				<input type = "password" name = "password" placeholder="Password"/>
 				<input type = "password" name = "password2" placeholder="Confirm Password"/><br>
+				Security Question: <input type = "text" name = "question" placeholder = "Put a word that noone knows"/>
 				<?php
 				  $db = new mysqli("instance1.cxuvlwohim3v.us-east-1.rds.amazonaws.com", "master", "password", "cloud337");
 
@@ -57,6 +58,7 @@
 				<div class = "para-text">
 					<p>
 						<a href="login.php">Already have an account?: Sign up</a>
+						<a href="forgotPass.php">Forgot your password: go here!</a>
 					</p>
 				</div>
 			</form>

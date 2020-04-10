@@ -22,9 +22,7 @@ if (isset($_POST['signup_user'])) {
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $password_1 = mysqli_real_escape_string($db, $_POST['password']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password2']);
-  $fname = "Ashen";
-  $mname = "Last";
-
+  $answer = mysqli_real_escape_string($db, $_POST['question']);
   if (empty($_POST['Driver']) && empty($_POST['Sponsor'])) {
 	  $role = mysqli_real_escape_string($db, $_POST['Administrator']);
   }elseif(empty($_POST['Sponsor']) && empty($_POST['Administrator'])) {
@@ -42,6 +40,7 @@ if (isset($_POST['signup_user'])) {
 	array_push($errors, "The two passwords do not match");
   }
   if(empty($role)) { array_push($errors, "Choose: Driver/Sponsor/Administrator");}
+  if(empty($answer)) {array_pus($errors, "Please answer your security question");}
 
   $_SESSION['emails'] = $email;
   
@@ -65,8 +64,8 @@ if (isset($_POST['signup_user'])) {
   if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO users (username, email, password, fname, mname, role) 
-  			  VALUES('$username', '$email', '$password', '$fname', '$mname' ,'$role')";
+  	$query = "INSERT INTO users (username, email, password, fname, mname, role, secAns) 
+  			  VALUES('$username', '$email', '$password', '$fname', '$mname' ,'$role', '$answer')";
   	mysqli_query($db, $query);
   	header('location: login.php');
   }
@@ -290,6 +289,87 @@ if (isset($_POST['submitAdmin'])) {
     $user_id = $user['id'];
             echo "40 points added to your account";
             mysqli_query($db,"UPDATE users SET points = (points + 40) WHERE ID=$user_id");
-        } }
+  } }
+
+if (isset($_POST['add'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p']);
+    $title = mysqli_real_escape_string($db, $_POST['t']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+	$user_id = $user['id'];
+
+	//$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+	$_SESSION['ratio'] = 1.5;
+
+	$query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+	if (mysqli_query($db, $query)) {
+	    header('location: shoppingCart.php');
+	}
+	else {
+	    array_push($errors, "id is $user_id");
+	    header('location: shoppingCart.php');
+	}
+    }
+    else {
+	array_push($errors, "In another else id");
+    }
+}
+
+if(isset($_POST['reset_pass'])){
+	$givenAns = mysqli_real_escape_string($db, $_POST['question']);
+  	$givenUsername = mysqli_real_escape_string($db, $_POST['username']);
+	$user_check_query = "SELECT secAns FROM users WHERE username='$givenUsername'";
+  	//$result = mysqli_query($db, $user_check_query);
+  	//$user = mysqli_fetch_assoc($result);
+	$_SESSION['user'] = $givenUsername;
+	
+	if($givenAns == $user_check_query){
+		echo "Cogratualtions, You have answered your security question rightly!";
+		echo "now create a new password to submit it";
+		header('location:resetPass.php');
+	}else{
+		array_push($errors, "either username or security answer is not right");
+	}
+}
+
+if(isset($_POST['pass_change'])){
+	$pass1 = mysqli_real_escape_string($db, $_POST['pass1']);
+    $pass2 = mysqli_real_escape_string($db, $_POST['pass2']);
+	$username = $_SESSION['user'];
+	
+	 if ($pass1 != $pass2) {
+	array_push($errors, "The two passwords do not match");
+  }
+	
+	mysqli_select_db($db, 'cloud337');
+  $id = "SELECT id FROM users WHERE username='$username'";
+  $results = mysqli_query($db, $id);
+
+  if(mysqli_num_rows($results) > 0){
+
+    $user = mysqli_fetch_assoc($results);
+    $user_id = $user['id'];
+
+    $query = "UPDATE users SET password = '$pass1' WHERE ID=$user_id"; 
+  
+    if(mysqli_query($db, $query))
+       header('location: login.php');
+  }
+  else
+    array_push($errors, "In another else id");
+
+}
 
 ?>
+
