@@ -12,11 +12,11 @@
 				<p>You can reset your password here.</p>
 				<br>
 				<div class="box">
-				<input type = "text" name = "username" placehoder = "enter your username from the database"/>
+				<input type = "text" name = "username" placeholder = "enter your username from the database"/>
 				<input type = "text" name = "question" placeholder="What is a word that noone knows"/>
 			</div>
 				<br> 
-				<button type="submit" name = "reset_pass">Submit</button>
+				<button type="submit" name = "reset_pass">SUBMIT</button>
 			</form>
 	</div>
 </body>

@@ -335,12 +335,13 @@ if(isset($_POST['reset_pass'])){
   	//$user = mysqli_fetch_assoc($result);
 	$_SESSION['user'] = $givenUsername;
 	
-	if($givenAns == $user_check_query){
-		echo "Cogratualtions, You have answered your security question rightly!";
-		echo "now create a new password to submit it";
+	if($givenAns === $user_check_query){
+		//echo "Cogratualtions, You have answered your security question rightly!";
+		//echo "now create a new password to submit it";
 		header('location:resetPass.php');
 	}else{
-		array_push($errors, "either username or security answer is not right");
+		header('location: login.php');
+		//array_push($errors, "either username or security answer is not right");
 	}
 }
 
