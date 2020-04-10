@@ -23,7 +23,6 @@ if (isset($_POST['signup_user'])) {
   $password_1 = mysqli_real_escape_string($db, $_POST['password']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password2']);
   $answer = mysqli_real_escape_string($db, $_POST['question']);
- 
   if (empty($_POST['Driver']) && empty($_POST['Sponsor'])) {
 	  $role = mysqli_real_escape_string($db, $_POST['Administrator']);
   }elseif(empty($_POST['Sponsor']) && empty($_POST['Administrator'])) {
