@@ -17,6 +17,7 @@
 				<button type="submit" name = "login_user">Login</button>
 				<div class = "para-text">
 				<p>
+				  <a href="forgotPass.php">Forgot Your password?</a><br>
 				  <a href="signup.php">Don't have an account?: Sign up</a>
 				</p>
 				</div>				

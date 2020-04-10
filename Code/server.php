@@ -40,7 +40,7 @@ if (isset($_POST['signup_user'])) {
 	array_push($errors, "The two passwords do not match");
   }
   if(empty($role)) { array_push($errors, "Choose: Driver/Sponsor/Administrator");}
-  if(empty($answer)) {array_pus($errors, "Please answer your security question");}
+  if(empty($answer)) {array_push($errors, "Please answer your security question");}
 
   $_SESSION['emails'] = $email;
   
@@ -328,46 +328,61 @@ if (isset($_POST['add'])) {
 
 if(isset($_POST['reset_pass'])){
 	$givenAns = mysqli_real_escape_string($db, $_POST['question']);
-  	$givenUsername = mysqli_real_escape_string($db, $_POST['username']);
-	$user_check_query = "SELECT secAns FROM users WHERE username='$givenUsername'";
-  	//$result = mysqli_query($db, $user_check_query);
-  	//$user = mysqli_fetch_assoc($result);
-	$_SESSION['user'] = $givenUsername;
-	
-	if($givenAns == $user_check_query){
-		echo "Cogratualtions, You have answered your security question rightly!";
-		echo "now create a new password to submit it";
-		header('location:resetPass.php');
-	}else{
-		array_push($errors, "either username or security answer is not right");
-	}
-}
+	$givenUsername = mysqli_real_escape_string($db, $_POST['username']);
 
+	if(empty($givenAns))
+		array_push($errors, "Security answer is required");
+	if(empty($givenUsername))
+		array_push($errors, "username is required");
+
+	if(count($errors) == 0){
+		$query = "SELECT secAns FROM users WHERE username='$givenUsername'";
+		$results = mysqli_query($db, $query);
+		$user = mysqli_fetch_assoc($results);
+		if(mysqli_num_rows($results) == 1) {
+                $_SESSION['user'] = $givenUsername;
+			if($user['secAns'] === $givenAns){
+					header('location: resetPass.php');
+			}
+			else{
+				header('location: forgotPass.php');
+				array_push($errors, "The security answer does not match");
+			}
+		}else{
+			header('location: forgotPass.php');
+			array_push($errors, "Your username does not match");
+		}
+	}}
+	
 if(isset($_POST['pass_change'])){
-	$pass1 = mysqli_real_escape_string($db, $_POST['pass1']);
-    $pass2 = mysqli_real_escape_string($db, $_POST['pass2']);
+	$pas1 = mysqli_real_escape_string($db, $_POST['pass1']);
+        $pas2 = mysqli_real_escape_string($db, $_POST['pass2']);
 	$username = $_SESSION['user'];
-	
-	 if ($pass1 != $pass2) {
-	array_push($errors, "The two passwords do not match");
-  }
-	
+
+        if(empty($pas1)) array_push($errors, "New password is required");	
+	if(empty($pas2)) array_push($errors, "Need to confirm your password");
+
+	if ($pas1 != $pas2) {
+	   array_push($errors, "The two passwords do not match");
+        }
+	if(count($errors) == 0){
 	mysqli_select_db($db, 'cloud337');
-  $id = "SELECT id FROM users WHERE username='$username'";
-  $results = mysqli_query($db, $id);
+        $id = "SELECT id FROM users WHERE username='$username'";
+        $results = mysqli_query($db, $id);
 
   if(mysqli_num_rows($results) > 0){
 
     $user = mysqli_fetch_assoc($results);
     $user_id = $user['id'];
 
-    $query = "UPDATE users SET password = '$pass1' WHERE ID=$user_id"; 
+    $pas1 = md5($pas1);
+    $query = "UPDATE users SET password = '$pas1' WHERE ID=$user_id"; 
   
     if(mysqli_query($db, $query))
        header('location: login.php');
-  }
+  }}
   else
-    array_push($errors, "In another else id");
+    array_push($errors, "Please Fill the required fields.");
 
 }
 

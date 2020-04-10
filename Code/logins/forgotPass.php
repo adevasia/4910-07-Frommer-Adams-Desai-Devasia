@@ -7,14 +7,12 @@
 	</head>
 <body>
 		<div class = "pass-box"> <br><br>
-			<h1 align="center"> Forgot Password? </h1>
-			<form>
-				<p>You can reset your password here.</p>
-				<br>
-				<div class="box">
-				<input type = "text" name = "username" placehoder = "enter your username from the database"/>
-				<input type = "text" name = "question" placeholder="What is a word that noone knows"/>
-			</div>
+			<h1 align="center"> Security Check </h1>
+			<form action="forgotPass.php" method="post">
+<?php include('../errors.php');?>	
+				<input type = "text" name = "username" placeholder = "enter your username"/>
+				<input type = "text" name = "question" placeholder="What is a word that no-one knows"/>
+			
 				<br> 
 				<button type="submit" name = "reset_pass">Submit</button>
 			</form>
