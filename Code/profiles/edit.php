@@ -42,8 +42,8 @@
             </a></button>
             <div class="dropdown-content">
                 <a href="sponsor_home.html">HOME</a>
-                <a href="view.php">DRIVER</a>
-                <a href="#">POINT SYSTEM</a>
+                <a href="sponsor_view.php">DRIVER</a>
+                <a href="points2.php">POINT SYSTEM</a>
                 <a href="sponsor_catalog.php">CATALOG</a>
                 <a href="#">ANALYTIC</a>
                 <a href="../logins/login.php">LOGOUT</a>

@@ -4,7 +4,7 @@
 <head>
 <title>Profile Page</title>
 <link rel="stylesheet" type="text/css" href="../logins/styles.css">
-<link rel="stylesheet" type="text/css" href="../catalog/navigation.css">
+<link rel="stylesheet" type="text/css" href="../navigation.css">
 <style>
 
 body {
@@ -43,21 +43,24 @@ img {
 
 <body>
 	<ul>
-		<h2 class="pointer">POINTS: </h2>
-		
-		<div class="dropdown">
-			<button class="dropbtn"><a href="driverprof.html"><img src="profpic.png" alt="Avatar" width="50" height="50" >
-			</a></button>
-			<div class="dropdown-content">
-				<a href="../catalog/catalog.html">CATALOG</a>
-				<a href="#">SPONSORS</a>
-				<a href="../logins/login.php">LOGOUT</a>
-			</div>
-		</div>
-    
-        <button class="dropbtn2"><li><a href="../catalog/shoppingCart.html"><img src="../catalog/cart.png" alt="Cart" width="50" height="50"  style="float: right;"></a></li></button>
-    
-    </ul>
+	<h2 class="pointer">POINTS: </h2>
+
+    <div class="dropdown">
+            <button class="dropbtn"><a href="driverprof.php"><img src="profpic.png" alt="Avatar" width="50" height="50" >
+            </a></button>
+            <div class="dropdown-content">
+                <a href="driver_home.html">HOME</a>
+                <a href="../catalog/catalog_home.php">CATALOG</a>
+                <a href="points.php">POINTS</a>
+                <a href="#">PURCHASES</a>
+                <a href="driver_company.php">COMPANY</a>
+                <a href="../logins/login.php">LOGOUT</a>
+            </div>
+     </div>
+
+	 <button class="dropbtn2"><li><a href="../catalog/shoppingCart.html"><img src="../catalog/cart.png" alt="Cart" width="50" height="50"  style="float: right;"></a></li></button>
+
+</ul>
 
 <p>
 	<img src="profpic.png" alt="Avatar" width="200" height="200" align="middle">
