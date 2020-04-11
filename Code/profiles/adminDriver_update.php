@@ -2,7 +2,7 @@
  
     require_once("connect.php");
  
-    if(isset($_POST['update']))
+    if(isset($_POST['updateAD']))
     {
         $UserID = $_GET['ID'];
         $UserName = $_POST['username'];
@@ -19,10 +19,11 @@
  
         $query = " update users set username = '".$UserName."', email='".$UserEmail."', password='".$UserPass."', fname='".$UserFname."', mname='".$UserMname."', lname='".$UserLname."', points='".$UserPoints."', bmonth='".$UserBmonth."', bday='".$UserBday."', city='".$UserCity."', state='".$UserState."' where id='".$UserID."'";
         $result = mysqli_query($conn,$query);
- 
-        if($result)
+ 		$user = mysqli_fetch_assoc($results);
+
+     if($result)
         {
-            header("location:view.php");
+           header("location:adminDriver_view.php");
         }
         else
         {
@@ -31,8 +32,6 @@
     }
     else
     {
-        header("location:view.php");
+			header("location:adminDriver_view.php");
     }
- 
- 
 ?>

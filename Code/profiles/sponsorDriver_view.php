@@ -1,4 +1,4 @@
-<!--Admin can add, delete, and edit Drivers-->
+<!--Sponsors can add, delete, and edit Drivers-->
 
 <?php 
  
@@ -33,7 +33,7 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
-	
+
 button {
   background-color: #4CAF50;
   color: white;
@@ -44,28 +44,25 @@ button {
   width: 100%;
   opacity: 0.9;
 }
-
-	
 </style>	
 <body class ="style" class="bg-dark">
-<ul>
+	<ul>
         <div class="dropdown">
-            <button class="dropbtn"><a href="adminprof.php"><img src="admin.jpg" alt="Avatar" width="50" height="50" >
+            <button class="dropbtn"><a href="sponsorprof.php"><img src="spons.jpg" alt="Avatar" width="50" height="50" >
             </a></button>
             <div class="dropdown-content">
-                <a href="admin_home.html">HOME</a>
-                <a href="admin_view.php">ADMIN</a>
-                <a href="adminSponsor_view.php">SPONSOR</a>
-                <a href="adminDriver_view.php">DRIVER</a>
+                <a href="sponsor_home.html">HOME</a>
+                <a href="view.php">DRIVER</a>
+                <a href="points2.php">POINT SYSTEM</a>
+                <a href="sponsor_catalog.php">CATALOG</a>
                 <a href="#">ANALYTIC</a>
                 <a href="../logins/login.php">LOGOUT</a>
             </div>
         </div>
-    
     </ul>
+
 	
-	<h1 align = "center" style="color: black" >Review and Edit Company's Drivers</h1>
-	
+	<h1 align = "center" style="color: black" >Review and Edit Your Drivers</h1>
 	<br>
 	
         <div class="container">
@@ -103,8 +100,8 @@ button {
                                         <td><?php echo $UserFname ?></td>
                                         <td><?php echo $UserLname ?></td>
                                         <td><?php echo $UserPoints ?></td>
-										<td>
-											<button  style="background-color: #17A43D" onclick=" window.location.href='adminDriver_edit.php?GetID=<?php echo $UserID ?>' ">Edit</button>
+                                      	<td>
+											<button  style="background-color: #17A43D" onclick=" window.location.href='sponsorDriver_edit.php?GetID=<?php echo $UserID ?>' ">Edit</button>
 										</td>
 										<td>
 											<button  style="background-color: #FB1111" onclick=" window.location.href='delete.php?Del=<?php echo $UserID ?>' ">Delete</button>

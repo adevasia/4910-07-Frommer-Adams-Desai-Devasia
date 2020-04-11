@@ -33,6 +33,17 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+	
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
 </style>	
 <body class ="style" class="bg-dark">
 <ul>
@@ -41,7 +52,7 @@ tr:nth-child(even) {
             </a></button>
             <div class="dropdown-content">
                 <a href="admin_home.html">HOME</a>
-                <a href="#">ADMIN</a>
+                <a href="admin_view.php">ADMIN</a>
                 <a href="adminSponsor_view.php">SPONSOR</a>
                 <a href="adminDriver_view.php">DRIVER</a>
                 <a href="#">ANALYTIC</a>
@@ -64,10 +75,9 @@ tr:nth-child(even) {
                                 <th> User Password </th>
                                 <th> First's Name </th>
                                 <th> Last's Name </th>
-                                <th> User Points </th>
                                 <th>  </th>
                                 <th>  </th>
-								<th>  </th>
+						
                             </tr>
                             <?php 
                                     
@@ -79,7 +89,7 @@ tr:nth-child(even) {
                                         $UserPass = $row['password'];
                                         $UserFname = $row['fname'];
                                         $UserLname = $row['lname'];
-                                        $UserPoints = $row['points'];
+                                 
                                         
                             ?>
                                     <tr>
@@ -89,10 +99,15 @@ tr:nth-child(even) {
                                         <td><?php echo $UserPass ?></td>
                                         <td><?php echo $UserFname ?></td>
                                         <td><?php echo $UserLname ?></td>
-                                        <td><?php echo $UserPoints ?></td>
-                                        <td><a href="edit.php?GetID=<?php echo $UserID ?>">Edit</a></td>
-                                        <td><a href="delete.php?Del=<?php echo $UserID ?>">Delete</a></td>
-										<td>Buy</td>
+                                 
+										   <td>
+											<button  style="background-color: #17A43D" onclick=" window.location.href='adminSponsor_edit.php?GetID=<?php echo $UserID ?>' ">Edit</button>
+										</td>
+                                        <td>
+											<button  style="background-color: #FB1111" onclick=" window.location.href='delete.php?Del=<?php echo $UserID ?>' ">Delete</button>
+										</td>
+										
+					
                                     </tr>        
                             <?php 
                                     }  
