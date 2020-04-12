@@ -1,17 +1,17 @@
 body{
 	margin: auto;
-	padding: 30px;
+	padding: 80px;
 	font-family: sans-serif;
 	text-align: center;
 }
 
 .left-box{
-	width: 350px;
-	height: 800px;
+	width: 320px;
+	height: 600px;
 	background: #000000;
 	color: #fff;
-	top:10%;
-	left:10%;
+	top:50%;
+	left:50%;
 	position: absolute;
 	transform: translate(-50%, -50%);
 	box-sizing: border-box;
@@ -35,7 +35,7 @@ body{
 
 .pass-box{
 	width: 320px;
-	height: 450px;
+	height: 420px;
 	background: #000000;
 	color: #fff;
 	top:50%;
