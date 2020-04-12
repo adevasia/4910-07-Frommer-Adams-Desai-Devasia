@@ -32,4 +32,21 @@
     {
         header("location:adminSponsor_view.php");
     }
+
+		//Delete
+	if(isset($_GET['Del']))
+	{
+		$UserID = $_GET['Del'];
+		$query = " delete from users where id = '".$UserID."'";
+		$result = mysqli_query($conn,$query);
+
+		if($result)
+		{
+			header("location:adminSponsor_view.php");
+		}
+		else
+		{
+			echo ' Please Check Your Query ';
+		}
+	}
 ?>

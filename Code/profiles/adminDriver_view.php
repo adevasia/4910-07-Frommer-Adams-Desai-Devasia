@@ -1,19 +1,10 @@
 <!--Admin can add, delete, and edit Drivers-->
-
-<?php 
- 
-    require_once("connect.php");
-    $query = " select * from users where role='Driver'";
-    $result = mysqli_query($conn,$query);
-?>
- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" a href="CSS/bootstrap.css"/>
 	<link rel="stylesheet" type="text/css" href="../navigation.css">
     <title>Review/Edit Drivers</title>
 </head>
@@ -35,7 +26,6 @@ tr:nth-child(even) {
 }
 	
 button {
-  background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -65,9 +55,26 @@ button {
     </ul>
 	
 	<h1 align = "center" style="color: black" >Review and Edit Company's Drivers</h1>
-	
+	<button  style="width: 20%; height: 20%; background-color: #17A5BC;" onclick=" window.location.href='newAdminDriver.php' ">Add New Drivers</button>
 	<br>
 	
+	<?php
+	require_once("connect.php");
+	$query1 = "select * from company";
+	$result1 = mysqli_query($conn,$query1);
+	
+
+		while($rows=mysqli_fetch_assoc($result1))
+		{
+			$company_name = $rows['name'];
+			
+				$conn = mysqli_connect("instance1.cxuvlwohim3v.us-east-1.rds.amazonaws.com", "master", "password", "cloud337");
+			$query = "select * from users where role='Driver' and companyN='".$company_name."'  ";
+			$result = mysqli_query($conn,$query);
+		
+	?>
+		<br>
+	    <h3 align="left"><?php echo $company_name;?></h3> 
         <div class="container">
                         <table style="color: black" align = "center">
                             <tr>
@@ -107,7 +114,7 @@ button {
 											<button  style="background-color: #17A43D" onclick=" window.location.href='adminDriver_edit.php?GetID=<?php echo $UserID ?>' ">Edit</button>
 										</td>
 										<td>
-											<button  style="background-color: #FB1111" onclick=" window.location.href='delete.php?Del=<?php echo $UserID ?>' ">Delete</button>
+											<button  style="background-color: #FB1111" onclick=" window.location.href='adminDriver_update.php?Del=<?php echo $UserID ?>' ">Delete</button>
 										</td>
 										<td>
 											<button  style="background-color: #0907C7" onclick=" window.location.href='buy.php?Del=<?php echo $UserID ?>' ">Buy</button>
@@ -120,6 +127,8 @@ button {
  
                         </table>
         </div>
-    
+       <?php 
+			}  
+		?>  
 </body>
 </html>

@@ -1,7 +1,7 @@
 <?php 
  
     require_once("connect.php");
- 
+ 	//Update
      if(isset($_POST['updateA']))
     {
         $UserID = $_GET['ID'];
@@ -32,4 +32,22 @@
     {
         header("location:admin_view.php");
     }
+
+
+	//Delete
+	if(isset($_GET['Del']))
+	{
+		$UserID = $_GET['Del'];
+		$query = " delete from users where id = '".$UserID."'";
+		$result = mysqli_query($conn,$query);
+
+		if($result)
+		{
+			header("location:admin_view.php");
+		}
+		else
+		{
+			echo ' Please Check Your Query ';
+		}
+	}
 ?>

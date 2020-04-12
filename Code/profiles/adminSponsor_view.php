@@ -1,12 +1,4 @@
 <!--Admin can add, delete, and edit Sponsors-->
-
-<?php 
- 
-    require_once("connect.php");
-    $query = " select * from users where role='Sponsor'";
-    $result = mysqli_query($conn,$query);
-?>
- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +27,6 @@ tr:nth-child(even) {
 }
 	
 button {
-  background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -64,8 +55,28 @@ button {
 	
 	<h1 align = "center" style="color: black" >Review and Edit Company's Sponsors</h1>
 	<h4 align = "center" style="color: black" >Edit Company's Catalog</h4>
-	<br>
 	
+	
+		<button  style="width: 20%; height: 20%; background-color: #17A5BC;" onclick=" window.location.href='newSponsors.php' ">Add New Sponsors</button>
+
+		<?php
+		require_once("connect.php");
+		$query1 = "select * from company";
+		$result1 = mysqli_query($conn,$query1);
+
+
+		while($rows=mysqli_fetch_assoc($result1))
+		{
+			$company_name = $rows['name'];
+
+				$conn = mysqli_connect("instance1.cxuvlwohim3v.us-east-1.rds.amazonaws.com", "master", "password", "cloud337");
+			$query = "select * from users where role='Sponsor' and companyN='".$company_name."'  ";
+			$result = mysqli_query($conn,$query);
+
+	?>
+		<br>
+		<h3 align: "left"><?php echo $company_name;?></h3>
+	    <p align="center"><a>Edit Catalog</a></p>
         <div class="container">
                         <table style="color: black" align = "center">
                             <tr>
@@ -104,7 +115,7 @@ button {
 											<button  style="background-color: #17A43D" onclick=" window.location.href='adminSponsor_edit.php?GetID=<?php echo $UserID ?>' ">Edit</button>
 										</td>
                                         <td>
-											<button  style="background-color: #FB1111" onclick=" window.location.href='delete.php?Del=<?php echo $UserID ?>' ">Delete</button>
+											<button  style="background-color: #FB1111" onclick=" window.location.href='adminSponsor_update.php?Del=<?php echo $UserID ?>' ">Delete</button>
 										</td>
 										
 					
@@ -116,6 +127,9 @@ button {
  
                         </table>
         </div>
+	  <?php 
+			}  
+	  ?>  
     
 </body>
 </html>

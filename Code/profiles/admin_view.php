@@ -1,4 +1,4 @@
-<!--Admin can add, delete, and edit Sponsors-->
+<!--Admin can add, delete, and edit Admins-->
 
 <?php 
  
@@ -36,7 +36,6 @@ tr:nth-child(even) {
 }
 
 button {
-  background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -65,6 +64,7 @@ button {
 	
 	<h1 align = "center" style="color: black" >Review and Edit Administrators</h1>
 
+	<button  style="width: 20%; height: 20%; background-color: #17A5BC;" onclick=" window.location.href='newAdmin.php' ">Add New Administrators</button>
 	<br>
 	
         <div class="container">
@@ -104,7 +104,7 @@ button {
 											<button  style="background-color: #17A43D" onclick=" window.location.href='admin_edit.php?GetID=<?php echo $UserID ?>' ">Edit</button>
 										</td>
                                         <td>
-											<button  style="background-color: #FB1111" onclick=" window.location.href='delete.php?Del=<?php echo $UserID ?>' ">Delete</button>
+											<button  style="background-color: #FB1111" onclick=" window.location.href='admin_update.php?Del=<?php echo $UserID ?>' ">Delete</button>
 										</td>
                                     </tr>        
                             <?php 
