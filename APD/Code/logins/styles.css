@@ -1,0 +1,164 @@
+body{
+	margin: auto;
+	padding: 80px;
+	font-family: sans-serif;
+	text-align: center;
+}
+
+.left-box{
+	width: 320px;
+	height: 600px;
+	background: #000000;
+	color: #fff;
+	top:50%;
+	left:50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+	text-align: center;
+}
+
+.login-page{
+	width: 320px;
+	height: 450px;
+	background: #000000;
+	color: #fff;
+	top:50%;
+	left:50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+	text-align: center;
+}
+
+.pass-box{
+	width: 320px;
+	height: 420px;
+	background: #000000;
+	color: #fff;
+	top:50%;
+	left:50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+	text-align: center;
+}
+
+.box{
+	border: 4px solid grey;
+}
+
+.pass-box p{
+	margin: auto;
+	text-align: center;
+	font-size: 15px;
+}
+
+.pass-box {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+h1{
+	position: relative;
+	top: -30px;
+	margin: 0;
+	padding: 0 0 10px;
+	text-align: center;
+	font-size: 28px;
+}
+
+.left-box p{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	text-align: left;
+}
+
+.left-box input[type="text"], input[type="password"] {
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color:#fff;
+	font-size:16px;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.login-page p{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	text-align: left;
+}
+
+.login-page input[type="text"], input[type="password"] {
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color:#fff;
+	font-size:16px;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.pass-box input[type="text"] {
+	border: none;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color:#fff;
+	font-size:16px;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.para-text p{
+	margin: 10px;
+	padding: 0 0 10px;
+	text-align: center;
+	font-size:18px;
+}
+
+button[type="submit"] {
+	margin: 10px;
+	border: none;
+	outline: none;
+	height: 40px;
+	background: #fb2525;
+	color:#fff;
+	font-size:20px;
+}
+
+button[type="submit"]:hover
+{
+	cursor: pointer;
+	background: #ffc107;
+	color: #000;
+
+}
+
+.left-box a{
+	text-decoration: none;
+	font-size:12px;
+	line-height: 20px;
+	color: darkgrey;
+}
+
+.login-page a{
+	text-decoration: none;
+	font-size:12px;
+	line-height: 20px;
+	color: darkgrey;
+}
+
+a:hover{
+color: blue;
+}
