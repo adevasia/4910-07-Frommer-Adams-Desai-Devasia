@@ -33,23 +33,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" a href="CSS/bootstrap.css"/>
 	<link rel="stylesheet" type="text/css" href="../navigation.css">
-    <title>Edit User</title>
+    <title>Edit Driver</title>
 </head>
 <body class ="style" class="bg-dark">
-	 <ul>
+	<ul>
         <div class="dropdown">
             <button class="dropbtn"><a href="sponsorprof.php"><img src="spons.jpg" alt="Avatar" width="50" height="50" >
             </a></button>
             <div class="dropdown-content">
                 <a href="sponsor_home.html">HOME</a>
-                <a href="sponsorDriver_view.php">DRIVER</a>
+                <a href="view.php">DRIVER</a>
                 <a href="points2.php">POINT SYSTEM</a>
                 <a href="sponsor_catalog.php">CATALOG</a>
                 <a href="#">ANALYTIC</a>
                 <a href="../logins/login.php">LOGOUT</a>
             </div>
         </div>
-    
     </ul>
 	
         <div class="container">
@@ -72,7 +71,7 @@
                                 <label>Birth Day:</label><input type="text" class="form-control mb-2" placeholder=" User Birth Day " name="bday" value="<?php echo $UserBday ?>"><br/><br/>
                                 <label>City:</label><input type="text" class="form-control mb-2" placeholder=" User City " name="city" value="<?php echo $UserCity ?>"><br/><br/>
                                 <label>State:</label><input type="text" class="form-control mb-2" placeholder=" User State " name="state" value="<?php echo $UserState ?>"><br/><br/>
-                                <button class="btn btn-primary" name="update">Update</button>
+                                <button class="btn btn-primary" name="updateSD">Update</button>
                             </form>
  
                         </div>

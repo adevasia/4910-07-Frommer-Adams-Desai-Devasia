@@ -13,19 +13,21 @@ for their company
 	
 <body class ="style">
 
-	<ul>
-		<div class="dropdown">
-			<button class="dropbtn"><a href="sponsorprof.php"><img src="spons.jpg" alt="Avatar" width="50" height="50" ></a></button>
-			<div class="dropdown-content">
-				<a href="sponsor_home.html">HOME</a>
-				<a href="#">DRIVER</a>
-				<a href="points2.php">POINT SYSTEM</a>
-				<a href="../catalog/sponsor_catalog.php">CATALOG</a>
-				<a href="#">ANALYTIC</a>
-				<a href="../logins/login.php">LOGOUT</a>
-			</div>
-		</div>
-	</ul>
+<ul>
+        <div class="dropdown">
+            <button class="dropbtn"><a href="sponsorprof.php"><img src="spons.jpg" alt="Avatar" width="50" height="50" >
+            </a></button>
+            <div class="dropdown-content">
+                <a href="sponsor_home.html">HOME</a>
+                <a href="sponsorDriver_view.php">DRIVER</a>
+                <a href="points2.php">POINT SYSTEM</a>
+                <a href="sponsor_catalog.php">CATALOG</a>
+                <a href="#">ANALYTIC</a>
+                <a href="../logins/login.php">LOGOUT</a>
+            </div>
+        </div>
+    
+    </ul>
 	
 	<h1><font color="black">Company sets points</font></h1>
 

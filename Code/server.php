@@ -30,7 +30,8 @@ if (isset($_POST['signup_user'])) {
   }else{
 	  $role = mysqli_real_escape_string($db, $_POST['Sponsor']);
   }
-	
+
+  $comp = $_POST['company'];
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
   if (empty($username)) { array_push($errors, "Username is required"); }
@@ -41,6 +42,7 @@ if (isset($_POST['signup_user'])) {
   }
   if(empty($role)) { array_push($errors, "Choose: Driver/Sponsor/Administrator");}
   if(empty($answer)) {array_push($errors, "Please answer your security question");}
+  if(empty($comp)) { array_push($errors, "Please select your company");}
 
   $_SESSION['emails'] = $email;
   
@@ -64,10 +66,35 @@ if (isset($_POST['signup_user'])) {
   if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO users (username, email, password, fname, mname, role, secAns) 
-  			  VALUES('$username', '$email', '$password', '$fname', '$mname' ,'$role', '$answer')";
+  	$query = "INSERT INTO users (username, email, password, fname, mname, role, secAns, companyN) 
+  			  VALUES('$username', '$email', '$password', '$fname', '$mname' ,'$role', '$answer', '$comp')";
   	mysqli_query($db, $query);
-  	header('location: login.php');
+	$users_id1 = mysqli_insert_id();
+	
+	mysqli_select_db($db, 'cloud337');
+	  
+  	$id = "SELECT id FROM company WHERE name='$comp'";
+  	$results = mysqli_query($db, $id);
+    $user = mysqli_fetch_assoc($results);
+    $user_id2 = $user['id'];
+	
+	$query3 = "UPDATE company SET username = '$username' WHERE ID=$user_id2";
+	mysqli_query($db, $query3);
+	
+    /*mysqli_select_db($db, 'cloud337');
+	$query2 = "INSERT INTO users_has_company (users_id, company_id)
+				VALUES('$users_id1','$user_id2')";
+  	mysqli_query($db, $query2);*/
+	$query = "UPDATE users_has_company SET users_id = '$users_id1', company_id = '$user_id2'";
+  	if(mysqli_query($db, $query)){
+
+		header('location: login.php');
+		echo "the compnayId is $user_id2";
+	}
+	 else{
+		 header('location: signup.php');
+		 		 echo "the compnayId is $user_id2";
+	 }
   }
 }
 
@@ -87,7 +114,7 @@ if (isset($_POST['login_user'])) {
   	$password = md5($password);
   	$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
   	$results = mysqli_query($db, $query);
-	  $user = mysqli_fetch_assoc($results);
+	$user = mysqli_fetch_assoc($results);
 	  
   	if (mysqli_num_rows($results) == 1) {
 	    $_SESSION['username'] = $username;
