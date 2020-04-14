@@ -1,3 +1,10 @@
+<?php
+	 require_once("connect.php");
+	 $UserID = $_GET['GetID'];	 
+?>
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +22,7 @@
             <button class="dropbtn"><a href="driverprof.php"><img src="profpic.png" alt="Avatar" width="50" height="50" >
             </a></button>
             <div class="dropdown-content">
-                <a href="driver_home.html">HOME</a>
+                <a href="driverHome.html">HOME</a>
                 <a href="../catalog/catalog_home.php">CATALOG</a>
                 <a href="points.php">POINTS</a>
                 <a href="#">PURCHASES</a>
@@ -31,7 +38,7 @@
 
     <div class="container">
         <div class="tile blue" id="catalog">
-            <a href="../catalog/catalog_home.php">
+            <a href="../catalog/catalog_home.php?GetID=<?php echo $UserID ?>">
                 <img src="catalog.png" class="icon" />
                 <span class="title"><b>Catalog</b></span>
                 <p>View Your Company's Catalog</p>

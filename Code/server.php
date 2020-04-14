@@ -23,6 +23,7 @@ if (isset($_POST['signup_user'])) {
   $password_1 = mysqli_real_escape_string($db, $_POST['password']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password2']);
   $answer = mysqli_real_escape_string($db, $_POST['question']);
+  $comp = $_POST['company'];
   if (empty($_POST['Driver']) && empty($_POST['Sponsor'])) {
 	  $role = mysqli_real_escape_string($db, $_POST['Administrator']);
   }elseif(empty($_POST['Sponsor']) && empty($_POST['Administrator'])) {
@@ -41,6 +42,7 @@ if (isset($_POST['signup_user'])) {
   }
   if(empty($role)) { array_push($errors, "Choose: Driver/Sponsor/Administrator");}
   if(empty($answer)) {array_push($errors, "Please answer your security question");}
+  if(empty($comp)) { array_push($errors, "Please select your company");}
 
   $_SESSION['emails'] = $email;
   
@@ -64,10 +66,19 @@ if (isset($_POST['signup_user'])) {
   if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO users (username, email, password, fname, mname, role, secAns) 
-  			  VALUES('$username', '$email', '$password', '$fname', '$mname' ,'$role', '$answer')";
-  	mysqli_query($db, $query);
-  	header('location: login.php');
+  	$query = "INSERT INTO users (username, email, password, fname, mname, role, secAns, companyN) 
+  			  VALUES('$username', '$email', '$password', '$fname', '$mname' ,'$role', '$answer', '$comp')";
+  	$res1 = mysqli_query($db, $query);
+	$userId1 = mysqli_insert_id();
+	
+	$id = "SELECT id FROM company WHERE name='$comp'";
+    $results = mysqli_query($db, $id);
+    $user = mysqli_fetch_assoc($results);
+    $userId2 = $user['id'];
+	  
+	$query1 = "INSERT INTO users_comp(users_id, company_id) VALUES ('$userId1', '$userId2')";
+	$rs1 = mysqli_query($db, $query1);
+	header('location: login.php');
   }
 }
 
@@ -386,7 +397,4 @@ if(isset($_POST['pass_change'])){
 
 }
 
-
-
 ?>
-

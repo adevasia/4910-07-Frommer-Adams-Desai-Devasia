@@ -1,10 +1,14 @@
 <!--Sponsors can add, delete, and edit Drivers-->
 
 <?php 
- 
+ 	
     require_once("connect.php");
     $query = " select * from users where role='Driver'";
     $result = mysqli_query($conn,$query);
+
+	require_once("connect.php");
+    $query1 = " select * from users where role='Sponsor'";
+    $result1 = mysqli_query($conn,$query1);
 ?>
  
 <!DOCTYPE html>

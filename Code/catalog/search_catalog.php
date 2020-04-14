@@ -1,5 +1,16 @@
-<?php include 'finding_catalog.php';?>
-<?php include('../server.php');?>
+<?php include 'finding_catalog.php';
+include('../server.php');
+mysqli_select_db($db, 'cloud337');
+
+$user = $_SESSION['username'];
+$query = " select * from users where username='".$user."'";
+$result = mysqli_query($db,$query);
+
+ while($row=mysqli_fetch_assoc($result))
+ {
+        $UserPoints = $row['points'];
+ }
+?>
 
 <!DOCTYPE html>
 <html>
@@ -14,7 +25,7 @@
 
 <body class="style">
 <ul>
-	<h2 class="pointer">POINTS: </h2>
+	<h2  style="color:black;" class="pointer">POINTS: <?php echo $UserPoints?> </h2>
 
 	  <div class="dropdown">
             <button class="dropbtn"><a href="driverprof.php"><img src="../profiles/profpic.png" alt="Avatar" width="50" height="50" >

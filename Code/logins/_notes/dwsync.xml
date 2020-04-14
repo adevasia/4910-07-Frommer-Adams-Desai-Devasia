@@ -4,7 +4,7 @@
 <file name="signup.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3669393910" remote="3669394254" Dst="-1" />
 <file name="login.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3669393942" remote="3669394200" Dst="-1" />
 <file name="styles.css" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132310965519704059" remote="132310965660000000" Dst="2" />
-<file name="signup.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132310965260895588" remote="132310965650000000" Dst="2" />
+<file name="signup.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132312882213445080" remote="132312884310000000" Dst="2" />
 <file name="login.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132310277806947357" remote="132310280010000000" Dst="2" />
 <file name="errors.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132305828215109677" remote="132310292400000000" Dst="2" />
 <file name="errorsStyles.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132305828215119684" remote="132310292400000000" Dst="2" />

@@ -23,12 +23,12 @@
 <file name="shoppingCart.js" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132292229914561263" remote="132294716620000000" Dst="2" />
 <file name="shoppingCart.html" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132310277806781324" remote="132310280000000000" Dst="2" />
 <file name="shoppingCart.css" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132292229914504534" remote="132294716620000000" Dst="2" />
-<file name="search_catalog.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132310277806711365" remote="132310292400000000" Dst="2" />
+<file name="search_catalog.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132312903567312939" remote="132312903890000000" Dst="2" />
 <file name="search.css" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132292229914464590" remote="132294716630000000" Dst="2" />
 <file name="finding_catalog.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132310277806601436" remote="132310292410000000" Dst="2" />
 <file name="catalog_items.js" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132303229764650409" remote="132303235020000000" Dst="2" />
 <file name="catalog_items.css" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132292229914424549" remote="132294716630000000" Dst="2" />
-<file name="catalog_home.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132310277806401541" remote="132310292410000000" Dst="2" />
+<file name="catalog_home.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132312908659641954" remote="132312908740000000" Dst="2" />
 <file name="catalog.png" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132292229914384557" remote="132294716640000000" Dst="2" />
 <file name="cart.png" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132292229914344820" remote="132294716640000000" Dst="2" />
 <file name="shopping_catalog.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132305828214889810" remote="132310292400000000" Dst="2" />

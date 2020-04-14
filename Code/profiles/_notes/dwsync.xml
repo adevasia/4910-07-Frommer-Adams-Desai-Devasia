@@ -24,13 +24,12 @@
 <file name="home_bg.css" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132292229915063900" remote="132294716570000000" Dst="2" />
 <file name="group.png" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132292229915063900" remote="132294716570000000" Dst="2" />
 <file name="google-analytics.png" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132292229915023905" remote="132294716570000000" Dst="2" />
-<file name="driver_home.html" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132310277808238162" remote="132310292390000000" Dst="2" />
 <file name="companyprof.html" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132292229914943877" remote="132294716580000000" Dst="2" />
 <file name="catalog.png" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132292229914943877" remote="132294716580000000" Dst="2" />
 <file name="admin_home.html" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132310975495238811" remote="132310975600000000" Dst="2" />
 <file name="admin.jpg" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132292229914863899" remote="132294716590000000" Dst="2" />
 <file name="sponsorprof.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132311032080376867" remote="132311032730000000" Dst="2" />
-<file name="driverprof.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132310321677980741" remote="132310322020000000" Dst="2" />
+<file name="driverprof.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132312903566423046" remote="132312903890000000" Dst="2" />
 <file name="adminprof.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132294737416386519" remote="132294757370000000" Dst="2" />
 <file name="passwordRedirect.html" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132305828216049681" remote="132310292380000000" Dst="2" />
 <file name="sponsor.html" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132305828216149599" remote="132310292380000000" Dst="2" />
@@ -52,9 +51,9 @@
 <file name="catalog.png" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3669309424" remote="3669393655" Dst="-1" />
 <file name="adminprof.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3669309424" remote="3669393655" Dst="-1" />
 <file name="connect.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132310333878062335" remote="132310333980000000" Dst="2" />
-<file name="driver_company.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132310277807917072" remote="132310280020000000" Dst="2" />
+<file name="driver_company.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132312903565393119" remote="132312903890000000" Dst="2" />
 <file name="insert2.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132310277808537995" remote="132310280020000000" Dst="2" />
-<file name="points.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132310317864308960" remote="132310320370000000" Dst="2" />
+<file name="points.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132312903748668770" remote="132312903900000000" Dst="2" />
 <file name="points2.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132311032079777241" remote="132311032730000000" Dst="2" />
 <file name="adminSponsor_view.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132311321063573832" remote="132311321180000000" Dst="2" />
 <file name="adminDriver_view.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132311317122430387" remote="132311317360000000" Dst="2" />
@@ -64,12 +63,13 @@
 <file name="admin_view.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132311271019013529" remote="132311271900000000" Dst="2" />
 <file name="admin_edit.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132311172963804420" remote="132311176930000000" Dst="2" />
 <file name="sponsorDriver_edit.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132311176693301089" remote="132311176940000000" Dst="2" />
-<file name="sponsorDriver_view.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132311275899919831" remote="132311276620000000" Dst="2" />
+<file name="sponsorDriver_view.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132311997199281290" remote="132312884310000000" Dst="2" />
 <file name="admin_update.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132311274010000000" remote="132311276610000000" Dst="2" />
 <file name="adminDriver_update.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132311274760723626" remote="132311276610000000" Dst="2" />
 <file name="adminSponsor_update.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132311275003685879" remote="132311276610000000" Dst="2" />
 <file name="sponsorDriver_update.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132311275181166907" remote="132311276620000000" Dst="2" />
-<file name="newAdmin.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132311227210000000" remote="132311227600000000" Dst="2" />
+<file name="newAdmin.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132311890943865974" remote="132311925720000000" Dst="2" />
 <file name="newSponsors.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132311280580073371" remote="132311280760000000" Dst="2" />
-<file name="newAdminDriver.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132311286529710276" remote="132311286640000000" Dst="2" />
+<file name="newAdminDriver.php" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132311890906262346" remote="132311925720000000" Dst="2" />
+<file name="driver_home.html" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/AMD/" local="132312902851937548" remote="132312903890000000" Dst="2" />
 </dwsync>

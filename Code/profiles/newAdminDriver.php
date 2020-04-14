@@ -72,7 +72,6 @@
  
      if(isset($_POST['Insert']))
     {
-        $UserID = $_GET['ID'];
         $UserName = $_POST['username'];
         $UserEmail = $_POST['email'];
         $UserPass = $_POST['password'];
