@@ -89,6 +89,18 @@
   			  VALUES('$UserName', '$UserEmail', '$UserPass', '$UserFname', '$UserMname' , '$UserLname', '$UserBmonth', '$UserBday', '$role', '$answer', '$UserCity', '$UserState', '$company')";
         $result = mysqli_query($conn,$query);
  
+		$users_id1 = mysqli_insert_id($conn);
+	  
+	  
+	$id = "SELECT id FROM company WHERE name='$company'";
+    $results = mysqli_query($conn, $id);
+    $user = mysqli_fetch_assoc($results);
+    $userId2 = $user['id'];
+	
+    $query = "INSERT INTO users_has_company (users_id, company_id)
+	      VALUES($users_id1, $userId2)";
+    if(mysqli_query($conn, $query));
+ 
         if($result)
         {
            header("location:adminSponsor_view.php");

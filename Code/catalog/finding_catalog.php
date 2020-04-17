@@ -11,30 +11,43 @@ $categoryArr = array();
 $maxPrice = "";
 $minPrice = "";
 
-// connect to the database
-$db = mysqli_connect("instance1.cxuvlwohim3v.us-east-1.rds.amazonaws.com", "master", "password", "cloud337");
 
-// check connection
-if ($db->connect_error) {
-    die("Connection failed: " . $db->connect_error);
-} 
+
 
 // Store the categories into the database
 if (isset($_POST['sponsor_done'])) {
-	/*
-	$username = $_SESSION['username'];
+	$userID = $_SESSION['id'];
+	mysqli_select_db($db, 'cloud337');
+	$query = "select company_id from users_has_company where users_id='$userID'";
+	$results = mysqli_query($db,$query);
+
+	if(mysqli_num_rows($results) > 0){
+		$user = mysqli_fetch_assoc($results);
+		$companyID = $user['company_id'];
+	}else{
+		echo "empty";
+	}
+
+  	mysqli_select_db($db, 'cloud337');
+	$query = "select name from company where id='$companyID'";
+	$results = mysqli_query($db,$query);
+
+	if(mysqli_num_rows($results) > 0){
+		$user = mysqli_fetch_assoc($results);
+		$company = $user['name'];
+	}else{
+		echo "empty";
+	}
 	
-	$user_id = "SELECT id FROM users WHERE username='$username'";
-	$company_id = "SELECT id FROM company WHERE name='Taco Bell'"; 	
-	$query = "INSERT INTO users_has_company (users_id, company_id) VALUES('$user_id','$company_id')";
-	//mysqli_query($db, $query);
-	*/
 	
 	$categoryArr = $_POST["Category"];
 	$category1 = $categoryArr[0];
 	$category2 = $categoryArr[1];
 	$category3 = $categoryArr[2];
 	$category4 = $categoryArr[3];
+	$maxPrice = $_POST["Max"];
+	$minPrice = $_POST["Min"];
+	
 	
 	
 	$_SESSION['category1'] = $categoryArr[0];
@@ -45,19 +58,16 @@ if (isset($_POST['sponsor_done'])) {
 	$_SESSION['maxPrice'] = $_POST["Max"];
 	$_SESSION['minPrice'] = $_POST["Min"];
 
-	
+	mysqli_select_db($db, 'cloud337');
+	$query = "UPDATE company SET name = '$company', categoryone='$category1',categorytwo='$category2',categorythree='$category3',categoryfour='$category4',min='$minPrice',max='$maxPrice' WHERE ID=$companyID"; 
 
-	/*
-	$company_id = "SELECT id FROM company WHERE name='$company_name'";
-	
-	$query = "UPDATE company SET name = '$company_name', categoryone='$category1',categorytwo='$category2',categorythree='$category3',categoryfour='$category4' WHERE ID=$company_id"; 
-	*/
-	/*
-	$query = "INSERT INTO company (name, categoryone, categorytwo, categorythree, categoryfour) VALUES('$company_name',$category1','$category2','$category3','$category4')";
-	  */
 	mysqli_query($db, $query);
-	header('location: ../catalog/catalog_home.php');
+	header('location: sponsor_home.html');
 }
+
+
+
+
 
 
 
@@ -75,9 +85,26 @@ $appid = 'AliciaDe-Finding-PRD-0ca8111fb-2e400c91';  // Replace with your own Ap
 $globalid = 'EBAY-US';  // Global ID of the eBay site you want to search (e.g., EBAY-DE)
 
 
+$userID = $_SESSION['id'];
+	mysqli_select_db($db, 'cloud337');
+	$query = "select company_id from users_has_company where users_id='$userID'";
+	$results = mysqli_query($db,$query);
 
-$min = $_SESSION['minPrice'];
-$max = $_SESSION['maxPrice'];
+	if(mysqli_num_rows($results) > 0){
+		$user = mysqli_fetch_assoc($results);
+		$companyID = $user['company_id'];
+	}else{
+		echo "empty";
+	}
+
+	mysqli_select_db($db, 'cloud337');
+	$query2	= "select * from company where id='$companyID'";
+ 	$result2 = mysqli_query($db,$query2);
+ 	while($row=mysqli_fetch_assoc($result2))
+    {	$cat = $row['categoryone'];
+		$max = $row['max'];
+		$min = $row['min'];    
+    }
 
 // Create a PHP array of the item filters you want to use in your request
 $i = '0';  // Initialize the item filter index to 0
@@ -141,7 +168,7 @@ $apicall .= "&GLOBAL-ID=$globalid";
 
 $cat_now = "";
 
-	$query= $_SESSION['category1'];   // You may want to supply your own query
+	$query= $cat;   // You may want to supply your own query
 	$safequery = urlencode($query);  // Make the query URL-friendly
 	$apicall .= "&keywords=$safequery";
 

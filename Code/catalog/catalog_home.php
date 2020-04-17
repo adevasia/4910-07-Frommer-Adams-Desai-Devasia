@@ -1,20 +1,42 @@
-<?php include 'finding_catalog.php';
+<?php 
+
 include('../server.php');
+$userID = $_SESSION['id'];
+
 mysqli_select_db($db, 'cloud337');
+$query = "select points from users where id='$userID'";
+$results = mysqli_query($db,$query);
+if(mysqli_num_rows($results) > 0){
+		$user = mysqli_fetch_assoc($results);
+		$points = $user['points'];
+}else{
+		echo "empty";
+}
 
-$user = $_SESSION['username'];
-$query = " select * from users where username='".$user."'";
-$result = mysqli_query($db,$query);
+mysqli_select_db($db, 'cloud337');
+$query = "select company_id from users_has_company where users_id='$userID'";
+$results = mysqli_query($db,$query);
 
- while($row=mysqli_fetch_assoc($result))
- {
-        $UserPoints = $row['points'];
- }
+if(mysqli_num_rows($results) > 0){
+		$user = mysqli_fetch_assoc($results);
+		$companyID = $user['company_id'];
+}else{
+		echo "empty";
+}
+mysqli_select_db($db, 'cloud337');
+$query = "select * from company where id='$companyID'";
+$results = mysqli_query($db,$query);
+
+ while($row=mysqli_fetch_assoc($results))
+    {
+	 	$name = $row['name'];
+       	$cat1 = $row['categoryone'];
+		$cat2 = $row['categorytwo'];
+		$cat3 = $row['categorythree'];
+		$cat4 = $row['categoryfour'];  
+    }
 ?>
 
-
-
-<!DOCTYPE html>
 <html>
 <head>
 <title>Catalog</title>
@@ -28,7 +50,7 @@ $result = mysqli_query($db,$query);
 
 <body class="style">
 <ul>
-	<h2  style="color:black;" class="pointer">POINTS: <?php echo $UserPoints?> </h2>
+	<h2 style="color:black;" class="pointer">POINTS: <?php echo $points?> </h2>
 
     <div class="dropdown">
             <button class="dropbtn"><a href="driverprof.php"><img src="../profiles/profpic.png" alt="Avatar" width="50" height="50" >
@@ -48,7 +70,7 @@ $result = mysqli_query($db,$query);
 </ul>
 
 <br style = “line-height:10”>
-
+<?php include 'finding_catalog.php';?>
 <!-- The search form -->
 <form class="example" action="search_catalog.php" method="post" style="margin:auto;max-width:500px">
 	<input type="text" id="user_input" placeholder="Search..." name="search2">
@@ -58,12 +80,11 @@ $result = mysqli_query($db,$query);
 <br style = “line-height:10”>
 
 <!--Categories-->
-
 <form class="buttons" action="catalog_home.php" method="post">	
-	<button class="active" data-sort="sort-all" type="submit" name="cat" value="<?php echo $_SESSION['category1'];?>" > <?php echo $_SESSION['category1']?></button>
-	<button type="submit" name="cat" value="<?php echo $_SESSION['category2'];?>"><?php echo $_SESSION['category2']?></button>
-	<button type="submit" name="cat" value="<?php echo $_SESSION['category3'];?>"><?php echo $_SESSION['category3']?></button>
-	<button type="submit" name="cat" value="<?php echo $_SESSION['category4'];?>"><?php echo $_SESSION['category4']?></button>
+	<button class="active" data-sort="sort-all" type="submit" name="cat" value="<?php echo $cat1?>" ><?php echo $cat1?></button>
+	<button type="submit" name="cat" value="<?php echo $cat2?>"><?php echo $cat2?></button>
+	<button type="submit" name="cat" value="<?php echo $cat3?>"><?php echo $cat3?></button>
+	<button type="submit" name="cat" value="<?php echo $cat4?>"><?php echo $cat4?></button>
 </form>	
   
 <br style = “line-height:10”>

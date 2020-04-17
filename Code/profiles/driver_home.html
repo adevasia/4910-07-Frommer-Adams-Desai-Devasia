@@ -1,10 +1,3 @@
-<?php
-	 require_once("connect.php");
-	 $UserID = $_GET['GetID'];	 
-?>
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,11 +27,11 @@
 
     </ul>
 
-    <h1 text-align = "center"><font color="black">Welcome, Driver</front></h1>
+    <h1 align="center"><font color="black">Welcome, Driver</front></h1>
 
     <div class="container">
         <div class="tile blue" id="catalog">
-            <a href="../catalog/catalog_home.php?GetID=<?php echo $UserID ?>">
+            <a href="../catalog/catalog_home.php">
                 <img src="catalog.png" class="icon" />
                 <span class="title"><b>Catalog</b></span>
                 <p>View Your Company's Catalog</p>

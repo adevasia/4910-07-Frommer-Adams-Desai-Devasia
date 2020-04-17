@@ -1,15 +1,29 @@
 <!--
-Allows the sponsor to customize their catalog
+Allows the admin to customize a company's catalog
 by choosing 4 categories and setting the min/max 
 price
 -->
-<?php include'../catalog/finding_catalog.php';?>
+
+<!--why does the done button stay on the same page and not the home page?--->
+<?php 
+ require_once("connect.php");
+    $companyID = $_GET['GetID'];
+    $query = " select * from company where id='".$companyID."'";
+    $result = mysqli_query($conn,$query);
+ 
+    while($row=mysqli_fetch_assoc($result))
+    {
+        $companyName = $row['name'];
+    }
+
+?>
+
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Customize Your Catalog</title>
+<title>Customize <?php echo $companyName?> Catalog</title>
 <link rel="stylesheet" type="text/css" href="../navigation.css">
 </head>
 	
@@ -29,27 +43,27 @@ input {
 	
 <body class ="style">
 	<!--Navigation Bar-->
-	<ul>
-	<div class="dropdown">
-		<button class="dropbtn"><a href="sponsorprof.php"><img src="spons.jpg" alt="Avatar" width="50" height="50" >
-		</a></button>
-		<div class="dropdown-content">
-			<a href="sponsor_home.html">HOME</a>
-			<a href="#">DRIVER</a>
-			<a href="#">POINT SYSTEM</a>
-			<a href="#">CATALOG</a>
-			<a href="#">ANALYTIC</a>
-			<a href="../logins/login.php">LOGOUT</a>
-		</div>
-	</div>
+<ul>
+        <div class="dropdown">
+            <button class="dropbtn"><a href="adminprof.php"><img src="admin.jpg" alt="Avatar" width="50" height="50" >
+            </a></button>
+            <div class="dropdown-content">
+                <a href="admin_home.html">HOME</a>
+                <a href="admin_view.php">ADMIN</a>
+                <a href="adminSponsor_view.php">SPONSOR</a>
+                <a href="adminDriver_view.php">DRIVER</a>
+                <a href="#">ANALYTIC</a>
+                <a href="../logins/login.php">LOGOUT</a>
+            </div>
+        </div>
+    
+    </ul>
+	
+	
+	<h1 align="center"> Customize <?php echo $companyName?>'s Catalog</h1>
+	<h3 align="center">Here you can decide what the drivers will see</h3>
 
-	</ul>
-	
-	
-	<h1 align="center"> Customize Your Catalog</h1>
-	<h3 align="center">Here you can decide what your drivers will see</h3>
-	
-	<form style="color: black" action="sponsor_catalog.php" method="post">
+	<form style="color: black" action="admin_catalogEdit.php?GetID=<?php echo $companyID ?>" method="post">
 		<h2 align="left">Select Categories</h2>
 		<p align="left">Choose up to <b>4</b> categories you will like your drivers to choose from </p>
 	
@@ -98,7 +112,7 @@ input {
 		</table>
 		
 		<h2 align="left">Select your <b>Max</b> Price limit</h2>
-		<select style="color: black" id="Max" name="Max" method="Post">
+		<select align="left" style="color: black" id="Max" name="Max" method="Post">
               <option value="10">10</option>
               <option value="15">15</option>
               <option value="20">20</option>
@@ -120,7 +134,7 @@ input {
 			  <option value="100">100</option>
             </select>
 		<h2 align="left">Select your <b>Min</b> Price limit</h2>
-			<select style="color: black" id="Min" name="Min" method="Post">
+			<select align="left"  style="color: black" id="Min" name="Min" method="Post">
               <option value="10">10</option>
               <option value="15">15</option>
               <option value="20">20</option>
@@ -142,7 +156,47 @@ input {
 			  <option value="100">100</option>
             </select>
 		<br>
-		<button style="float: left" type="submit" name = "sponsor_done">Done</button>
+		<button style="float: left" type="submit" name ="admin_done">Done</button>
+		<?php
+			include('../server.php');
+
+			// initializing variables
+			$category1 = "";
+			$category2 = "";
+			$category3 = "";
+			$category4 = ""; 
+			$categoryArr = array();
+			$maxPrice = "";
+			$minPrice = "";
+
+
+			// Store the categories into the database
+			if (isset($_POST['admin_done'])) {
+				$categoryArr = $_POST["Category"];
+				$category1 = $categoryArr[0];
+				$category2 = $categoryArr[1];
+				$category3 = $categoryArr[2];
+				$category4 = $categoryArr[3];
+				$maxPrice = $_POST["Max"];
+				$minPrice = $_POST["Min"];
+
+				mysqli_select_db($db, 'cloud337');
+				$query = "UPDATE company SET name = '$companyName', categoryone='$category1',categorytwo='$category2',categorythree='$category3',categoryfour='$category4',min='$minPrice',max='$maxPrice' WHERE ID=$companyID"; 
+
+				$results=mysqli_query($db, $query);
+				if($results)
+				{
+				   header("location:admin_home.html");
+				}
+				else
+				{
+					echo ' Please Check Your Query ';
+				}
+			}
+		?>			
 	</form>
+	
+
 </body>
 </html>
+

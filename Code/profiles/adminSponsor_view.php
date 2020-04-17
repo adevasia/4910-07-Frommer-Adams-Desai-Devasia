@@ -68,15 +68,15 @@ button {
 		while($rows=mysqli_fetch_assoc($result1))
 		{
 			$company_name = $rows['name'];
-
+			$companyID = $rows['id'];
 				$conn = mysqli_connect("instance1.cxuvlwohim3v.us-east-1.rds.amazonaws.com", "master", "password", "cloud337");
 			$query = "select * from users where role='Sponsor' and companyN='".$company_name."'  ";
 			$result = mysqli_query($conn,$query);
 
 	?>
 		<br>
-		<h3 align: "left"><?php echo $company_name;?></h3>
-	    <p align="center"><a>Edit Catalog</a></p>
+		<h3 align="left"><?php echo $company_name;?></h3>
+	    <p align="left"><a href='admin_catalogEdit.php?GetID=<?php echo $companyID ?>'>Edit Catalog</a></p>
         <div class="container">
                         <table style="color: black" align = "center">
                             <tr>

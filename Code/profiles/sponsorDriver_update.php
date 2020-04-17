@@ -36,14 +36,16 @@
     }
 
 
-		//Delete
+	//Delete
 	if(isset($_GET['Del']))
 	{
 		$UserID = $_GET['Del'];
 		$query = " delete from users where id = '".$UserID."'";
 		$result = mysqli_query($conn,$query);
 
-		if($result)
+		$query = " delete from users_has_company where users_id = '".$UserID."'";
+		$result2 = mysqli_query($conn,$query);
+		if($result && $result2)
 		{
 			header("location:sponsorDriver_view.php");
 		}
