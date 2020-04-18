@@ -30,20 +30,19 @@ input {
 <body class ="style">
 	<!--Navigation Bar-->
 	<ul>
-	<div class="dropdown">
-		<button class="dropbtn"><a href="sponsorprof.php"><img src="spons.jpg" alt="Avatar" width="50" height="50" >
-		</a></button>
-		<div class="dropdown-content">
-			<a href="sponsor_home.html">HOME</a>
-			<a href="#">DRIVER</a>
-			<a href="#">POINT SYSTEM</a>
-			<a href="#">CATALOG</a>
-			<a href="#">ANALYTIC</a>
-			<a href="../logins/login.php">LOGOUT</a>
-		</div>
-	</div>
-
-	</ul>
+        <div class="dropdown">
+            <button class="dropbtn"><a href="sponsorprof.php"><img src="spons.jpg" alt="Avatar" width="50" height="50" >
+            </a></button>
+            <div class="dropdown-content">
+                <a href="sponsor_home.html">HOME</a>
+                <a href="view.php">DRIVER</a>
+                <a href="points2.php">POINT SYSTEM</a>
+                <a href="sponsor_catalog.php">CATALOG</a>
+                <a href="#">ANALYTIC</a>
+                <a href="../logins/login.php">LOGOUT</a>
+            </div>
+        </div>
+    </ul>
 	
 	
 	<h1 align="center"> Customize Your Catalog</h1>

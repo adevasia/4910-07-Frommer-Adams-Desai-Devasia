@@ -128,7 +128,7 @@ button {
 											<button  style="background-color: #FB1111" onclick=" window.location.href='sponsorDriver_update.php?Del=<?php echo $UserID ?>' ">Delete</button>
 										</td>
 										<td>
-											<button  style="background-color: #0907C7" onclick=" window.location.href='buy.php?Del=<?php echo $UserID ?>' ">Buy</button>
+											<button  style="background-color: #0907C7" onclick=" window.location.href='../catalog/sponsor_driverCatalog.php?GetID=<?php echo $UserID ?>' ">Buy</button>
 										</td>
                                     </tr>        
                             <?php 

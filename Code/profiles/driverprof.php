@@ -43,7 +43,6 @@ img {
 
 <body>
 	<ul>
-	<h2 class="pointer">POINTS: </h2>
 
     <div class="dropdown">
             <button class="dropbtn"><a href="driverprof.php"><img src="profpic.png" alt="Avatar" width="50" height="50" >

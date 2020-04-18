@@ -81,7 +81,7 @@ $results = mysqli_query($db,$query);
 
 <!--Categories-->
 <form class="buttons" action="catalog_home.php" method="post">	
-	<button class="active" data-sort="sort-all" type="submit" name="cat" value="<?php echo $cat1?>" ><?php echo $cat1?></button>
+	<button data-sort="sort-all" type="submit" name="cat" value="<?php echo $cat1?>" ><?php echo $cat1?></button>
 	<button type="submit" name="cat" value="<?php echo $cat2?>"><?php echo $cat2?></button>
 	<button type="submit" name="cat" value="<?php echo $cat3?>"><?php echo $cat3?></button>
 	<button type="submit" name="cat" value="<?php echo $cat4?>"><?php echo $cat4?></button>

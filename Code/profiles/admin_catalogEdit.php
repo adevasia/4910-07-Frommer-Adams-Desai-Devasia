@@ -157,6 +157,12 @@ input {
             </select>
 		<br>
 		<button style="float: left" type="submit" name ="admin_done">Done</button>
+		
+	</form>
+	
+
+</body>
+</html>
 		<?php
 			include('../server.php');
 
@@ -182,21 +188,7 @@ input {
 
 				mysqli_select_db($db, 'cloud337');
 				$query = "UPDATE company SET name = '$companyName', categoryone='$category1',categorytwo='$category2',categorythree='$category3',categoryfour='$category4',min='$minPrice',max='$maxPrice' WHERE ID=$companyID"; 
-
-				$results=mysqli_query($db, $query);
-				if($results)
-				{
-				   header("location:admin_home.html");
-				}
-				else
-				{
-					echo ' Please Check Your Query ';
-				}
+				mysqli_query($db, $query);
+				header('location: sponsor_home.html');
 			}
-		?>			
-	</form>
-	
-
-</body>
-</html>
-
+		?>	
