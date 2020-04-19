@@ -4,7 +4,6 @@
  	include('../server.php');
   //  require_once("connect.php");
 	$userID = $_SESSION['id'];
-
   	mysqli_select_db($db, 'cloud337');
 	$query = "select company_id from users_has_company where users_id='$userID'";
 	$results = mysqli_query($db,$query);

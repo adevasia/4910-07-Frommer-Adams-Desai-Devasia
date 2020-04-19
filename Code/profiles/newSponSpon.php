@@ -94,7 +94,7 @@
         $UserID = $_GET['ID'];
         $UserName = $_POST['username'];
         $UserEmail = $_POST['email'];
-        $UserPass = $_POST['password'];
+        $UserPass = md5($_POST['password']);
         $UserFname = $_POST['fname'];
         $UserMname = $_POST['mname'];
         $UserLname = $_POST['lname'];
