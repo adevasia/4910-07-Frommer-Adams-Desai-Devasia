@@ -69,35 +69,35 @@ if (isset($_POST['signup_user'])) {
   // Finally, register user if there are no errors in the form
   if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
-	  
-	if($user1['role'] === "Driver"){
-		  	$query = "INSERT INTO requests (username, email, password, role, secAns, companyN, what) 
-  			  VALUES('$username', '$email', '$password', '$role', '$answer', '$comp', $an)";
-  	$res1 = mysqli_query($db, $query);
-	$userId1 = mysqli_insert_id($db);
 	
-	$id = "SELECT id FROM company WHERE name='$comp'";
-    $results = mysqli_query($db, $id);
-    $user = mysqli_fetch_assoc($results);
-    $userId2 = $user['id'];
-	  
-	header('location: requestSend.html');
+	if($role === "Driver"){
+    		  	$query ="INSERT INTO requests (username, email, password, role, secAns, companyN) 
+			  VALUES('$username', '$email', '$password','$role', '$answer', '$comp')";
+      	$res1 = mysqli_query($db, $query);
+    	$userId1 = mysqli_insert_id($db);
+    	
+    	$id = "SELECT id FROM company WHERE name='$comp'";
+        $results = mysqli_query($db, $id);
+        $user = mysqli_fetch_assoc($results);
+        $userId2 = $user['id'];
+    	  
+    	header('location: requestSend.html');
 	}
 	 else{
-		   	$query = "INSERT INTO users (username, email, password, role, secAns, companyN) 
-  			  VALUES('$username', '$email', '$password', $role', '$answer', '$comp')";
-
-  	$res1 = mysqli_query($db, $query);
-	$userId1 = mysqli_insert_id($db);
-	
-	$id = "SELECT id FROM company WHERE name='$comp'";
-    $results = mysqli_query($db, $id);
-    $user = mysqli_fetch_assoc($results);
-    $userId2 = $user['id'];
-	  
-	$query1 = "INSERT INTO users_has_company(users_id, company_id) VALUES ($userId1, $userId2)";
-	mysqli_query($db, $query1);
-	header('location: login.php');
+    		   	$query = "INSERT INTO users (username, email, password, fname, mname, role, secAns, companyN) 
+			  VALUES('$username', '$email', '$password', '$fname', '$mname' ,'$role', '$answer', '$comp')";
+    
+      	$res1 = mysqli_query($db, $query);
+    	$userId1 = mysqli_insert_id($db);
+    	
+    	$id = "SELECT id FROM company WHERE name='$comp'";
+        $results = mysqli_query($db, $id);
+        $user = mysqli_fetch_assoc($results);
+        $userId2 = $user['id'];
+    	  
+    	$query1 = "INSERT INTO users_has_company(users_id, company_id) VALUES ($userId1, $userId2)";
+    	mysqli_query($db, $query1);
+    	header('location: login.php');
 	 }
   }
 }
@@ -430,4 +430,6 @@ if(isset($_POST['pass_change'])){
 }
 
 ?>
+
+
 
