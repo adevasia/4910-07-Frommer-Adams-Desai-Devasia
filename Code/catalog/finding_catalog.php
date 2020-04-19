@@ -196,23 +196,26 @@ if(isset($_POST['cat'])){
 	// Check to see if the request was successful, else print an error
 	if ($resp->ack == "Success") {
 		$results = '';
+		$search = array();
 		$i = 0;
 			foreach($resp->searchResult->item as $item){
 				$pic   = $item->galleryURL;
 				$link  = $item->viewItemURL;
 				$title = $item->title;
 				$category = $item->condition->conditionDisplayName;
-				$price = "$";
-				$price .= $item->sellingStatus->convertedCurrentPrice;
+				//$price = "$";
+				$price = $item->sellingStatus->convertedCurrentPrice;
 				$shippingInfo = $item->shippingInfo->shippingType;
 				$shippingInfo .= " Shipping";
 			//	$available = $item->listingInfo->buyItNowAvailable;
 
-				$results .= "<tr>
+				//$search[] = array($pic, $link, $title, $price, $category, $shippingInfo);
+				$results = "<tr>
 							 <td><img src=\"$pic\"></td>
 							 <td><a href=\"$link\">$title</a><br>
-							 $price<br>$category<br>$shippingInfo
+							 $$price<br>$category<br>
 							</td></tr>";
+				$search[] = array($pic, $link, $title, $price, $category, $shippingInfo, $results);
 				$i++;
 
 			}
