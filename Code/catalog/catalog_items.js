@@ -21,3 +21,11 @@ function gridView() {
  function myFunc() { 
            window.location.href="search_catalog.php"; 
  } 
+
+ function myFunc2() { 
+           window.location.href="sponsor_searchCatalog.php"; 
+ } 
+
+ function myFunc3() { 
+           window.location.href="admin_searchCatalog.php"; 
+ } 

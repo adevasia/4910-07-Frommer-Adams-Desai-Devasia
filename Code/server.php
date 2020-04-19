@@ -5,6 +5,8 @@ session_start();
 $username = "";
 $email    = "";
 $role     = "";
+$userId2 = "";
+$comp = "";
 $errors = array(); 
 
 // connect to the database
@@ -24,6 +26,8 @@ if (isset($_POST['signup_user'])) {
   $password_2 = mysqli_real_escape_string($db, $_POST['password2']);
   $answer = mysqli_real_escape_string($db, $_POST['question']);
   $comp = $_POST['company'];
+  $an = 0;
+	
   if (empty($_POST['Driver']) && empty($_POST['Sponsor'])) {
 	  $role = mysqli_real_escape_string($db, $_POST['Administrator']);
   }elseif(empty($_POST['Sponsor']) && empty($_POST['Administrator'])) {
@@ -65,9 +69,24 @@ if (isset($_POST['signup_user'])) {
   // Finally, register user if there are no errors in the form
   if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
+	  
+	if($user1['role'] === "Driver"){
+		  	$query = "INSERT INTO requests (username, email, password, role, secAns, companyN, what) 
+  			  VALUES('$username', '$email', '$password', '$role', '$answer', '$comp', $an)";
+  	$res1 = mysqli_query($db, $query);
+	$userId1 = mysqli_insert_id($db);
+	
+	$id = "SELECT id FROM company WHERE name='$comp'";
+    $results = mysqli_query($db, $id);
+    $user = mysqli_fetch_assoc($results);
+    $userId2 = $user['id'];
+	  
+	header('location: requestSend.html');
+	}
+	 else{
+		   	$query = "INSERT INTO users (username, email, password, role, secAns, companyN) 
+  			  VALUES('$username', '$email', '$password', $role', '$answer', '$comp')";
 
-  	$query = "INSERT INTO users (username, email, password, fname, mname, role, secAns, companyN) 
-  			  VALUES('$username', '$email', '$password', '$fname', '$mname' ,'$role', '$answer', '$comp')";
   	$res1 = mysqli_query($db, $query);
 	$userId1 = mysqli_insert_id($db);
 	
@@ -79,6 +98,7 @@ if (isset($_POST['signup_user'])) {
 	$query1 = "INSERT INTO users_has_company(users_id, company_id) VALUES ($userId1, $userId2)";
 	mysqli_query($db, $query1);
 	header('location: login.php');
+	 }
   }
 }
 
@@ -96,13 +116,19 @@ if (isset($_POST['login_user'])) {
 
   if (count($errors) == 0) {
   	$password = md5($password);
+	  
   	$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
   	$results = mysqli_query($db, $query);
 	  $user = mysqli_fetch_assoc($results);
 	  
+	   $query1 = "SELECT * FROM requests WHERE username='$username' AND password='$password'";
+  	$results1 = mysqli_query($db, $query1);
+	  $user1 = mysqli_fetch_assoc($results1);
+	  
+	  $_SESSION['id'] = $user['id'];
   	if (mysqli_num_rows($results) == 1) {
 	    $_SESSION['username'] = $username;
-		
+		 $_SESSION['un'] = $username;	
   	  if($user['role'] === "Driver"){
   		  header('location: ../profiles/driver_home.html');
   	  }elseif($user['role'] === "Sponsor"){
@@ -111,6 +137,12 @@ if (isset($_POST['login_user'])) {
   		  header('location: ../profiles/admin_home.html');
       }
     }
+	else if(mysqli_num_rows($results1) == 1) {
+			 $_SESSION['un'] = $username;
+	  if($user1['role'] === "Driver"){
+  		  echo "Your request has not been accepted yet!!";
+  	  }
+	}
     else {
   		array_push($errors, "Wrong username/password combination");
   	}

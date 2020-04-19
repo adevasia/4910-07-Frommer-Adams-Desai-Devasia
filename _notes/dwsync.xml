@@ -1,1 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?><dwsync><file name="README.md" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/" local="3664383047" remote="3666793953" Dst="-1" /><file name="README.md" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3664383047" remote="3669307537" Dst="-1" /></dwsync>
+<<<<<<< HEAD
+<?xml version="1.0" encoding="utf-8" ?><dwsync><file name="README.md" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/" local="3664383047" remote="3666793953" Dst="-1" /><file name="README.md" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3664383047" remote="3669307537" Dst="-1" /><file name="README.md" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/APD/" local="3664383047" remote="3669923819" Dst="-1" /></dwsync>
+=======
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="README.md" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/" local="3664383047" remote="3666793953" Dst="-1" />
+<file name="README.md" server="ec2-3-94-105-144.compute-1.amazonaws.com//var/www/html/" local="3664383047" remote="3669307537" Dst="-1" />
+</dwsync>
+>>>>>>> origin/master

@@ -2,12 +2,13 @@
  
     require_once("connect.php");
  
-    if(isset($_POST['update']))
+
+  if(isset($_POST['updateSD']))
     {
         $UserID = $_GET['ID'];
         $UserName = $_POST['username'];
         $UserEmail = $_POST['email'];
-        $UserPass = $_POST['password'];
+        $UserPass = md5($_POST['password']);
         $UserFname = $_POST['fname'];
         $UserMname = $_POST['mname'];
         $UserLname = $_POST['lname'];
@@ -22,7 +23,7 @@
  
         if($result)
         {
-            header("location:view.php");
+			header("location:sponsorDriver_view.php");
         }
         else
         {
@@ -31,8 +32,26 @@
     }
     else
     {
-        header("location:view.php");
+			header("location:sponsorDriver_view.php");
     }
- 
- 
+
+
+	//Delete
+	if(isset($_GET['Del']))
+	{
+		$UserID = $_GET['Del'];
+		$query = " delete from users where id = '".$UserID."'";
+		$result = mysqli_query($conn,$query);
+
+		$query = " delete from users_has_company where users_id = '".$UserID."'";
+		$result2 = mysqli_query($conn,$query);
+		if($result && $result2)
+		{
+			header("location:sponsorDriver_view.php");
+		}
+		else
+		{
+			echo ' Please Check Your Query ';
+		}
+	}
 ?>
