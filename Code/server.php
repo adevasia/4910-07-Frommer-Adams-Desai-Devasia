@@ -337,7 +337,8 @@ if (isset($_POST['submitAdmin'])) {
 
 if (isset($_POST['add'])) {
     $username = $_SESSION['username'];
-    $price = mysqli_real_escape_string($db, $_POST['p']);
+     $price = $search[0][3];
+    //$price = mysqli_real_escape_string($db, $_POST['p']);
     $title = mysqli_real_escape_string($db, $_POST['t']);
     //$price = $_SESSION['items'][3];
 
@@ -353,7 +354,7 @@ if (isset($_POST['add'])) {
 	$user_id = $user['id'];
 
 	//$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
-	$_SESSION['ratio'] = 1.5;
+	$_SESSION['ratio'] = 2;
 
 	$query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
 
