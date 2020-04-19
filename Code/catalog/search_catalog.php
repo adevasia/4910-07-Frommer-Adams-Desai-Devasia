@@ -63,19 +63,101 @@
 <table class="column">
   <tr>
   <td >
-    <input type="text" name="t" placeholder="title" value="<?php session_start(); echo $search[2]; ?>" />
-    <?php 
-    echo "<tr><td><img src=\"$search[0]\"></td><td><a href=\"$search[1]\">$search[2]</a><br>$$search[3]</td></tr>"; ?> 
-     
+   <input type="text" name="t" placeholder="title" value="<?php session_start(); echo $search[0][2]; ?>" />
+	<?php session_start();
+	$pic = $search[0][0];
+	$link = $search[0][1];
+	$title = $search[0][2];
+	$price = $search[0][3];
+	$category = $search[0][4];
+	$shippingInfo = $search[0][5];
+	echo "<tr><td><img src=\"$pic\"></td><td><a href=\"$link\">$title</a><br>$price<br>$category<br>$shippingInfo</td></tr>";
+	//echo "<tr><td><img src=\"$search[0][0]\"></td><td><a href=\"$search[0][1]\">$search[0][2]</a><br>$search[0][3]<br>$search[0][4]<br>$search[0][5]</td></tr>"; ?>    
   </td>
 </tr>
+
+  <tr>
+  <td >
+   <input type="text" name="t1" placeholder="title" value="<?php session_start(); echo $search[1][2]; ?>" />
+        <?php session_start();
+        $pic = $search[1][0];
+        $link = $search[1][1];
+        $title = $search[1][2];
+        $price = $search[1][3];
+        $category = $search[1][4];
+        $shippingInfo = $search[1][5];
+        echo "<tr><td><img src=\"$pic\"></td><td><a href=\"$link\">$title</a><br>$price<br>$category<br>$shippingInfo</td></tr>";
+        //echo "<tr><td><img src=\"$search[0][0]\"></td><td><a href=\"$search[0][1]\">$search[0][2]</a><br>$search[0][3]<br>$search[0][4]<br>$search[0][5]</td></tr>"; ?>
+  </td>
+</tr>
+
+  <tr>
+  <td >
+   <input type="text" name="t2" placeholder="title" value="<?php session_start(); echo $search[2][2]; ?>" />
+        <?php session_start();
+        $pic = $search[2][0];
+        $link = $search[2][1];
+        $title = $search[2][2];
+        $price = $search[2][3];
+        $category = $search[2][4];
+        $shippingInfo = $search[2][5];
+        echo "<tr><td><img src=\"$pic\"></td><td><a href=\"$link\">$title</a><br>$price<br>$category<br>$shippingInfo</td></tr>";
+        //echo "<tr><td><img src=\"$search[0][0]\"></td><td><a href=\"$search[0][1]\">$search[0][2]</a><br>$search[0][3]<br>$search[0][4]<br>$search[0][5]</td></tr>"; ?>
+  </td>
+</tr>
+
+  <tr>
+  <td >
+   <input type="text" name="t3" placeholder="title" value="<?php session_start(); echo $search[3][2]; ?>" />
+        <?php session_start();
+        $pic = $search[3][0];
+        $link = $search[3][1];
+        $title = $search[3][2];
+        $price = $search[3][3];
+        $category = $search[3][4];
+	$shippingInfo = $search[3][5];
+	$_SESSION['save'] = $pic;
+        echo "<tr><td><img src=\"$pic\"></td><td><a href=\"$link\">$title</a><br>$price<br>$category<br>$shippingInfo</td></tr>";
+        //echo "<tr><td><img src=\"$search[0][0]\"></td><td><a href=\"$search[0][1]\">$search[0][2]</a><br>$search[0][3]<br>$search[0][4]<br>$search[0][5]</td></tr>"; ?>
+  </td>
+</tr>
+
+  <tr>
+  <td >
+   <input type="text" name="t4" placeholder="title" value="<?php session_start(); echo $search[4][2]; ?>" />
+        <?php session_start();
+        $pic = $search[4][0];
+        $link = $search[4][1];
+        $title = $search[4][2];
+        $price = $search[4][3];
+        $category = $search[4][4];
+        $shippingInfo = $search[4][5];
+        echo "<tr><td><img src=\"$pic\"></td><td><a href=\"$link\">$title</a><br>$price<br>$category<br>$shippingInfo</td></tr>";
+        //echo "<tr><td><img src=\"$search[0][0]\"></td><td><a href=\"$search[0][1]\">$search[0][2]</a><br>$search[0][3]<br>$search[0][4]<br>$search[0][5]</td></tr>"; ?>
+  </td>
+</tr>
+
 </table>
 
 <br><br>
-
-
 <button type="submit" name = "add">Add to Cart</button>
-<input type="text" name="p" placeholder="price of item" value="<?php echo $search[3]; ?>" />
+<input type="text" name="p" placeholder="price of item" value="<?php echo $search[0][3]; ?>" />
+
+<br><br><br><br><br><br><br>
+<button type="submit" name = "add1">Add to Cart</button>
+<input type="text" name="p1" placeholder="price of item" value="$<?php echo $search[1][3]; ?>" />
+
+<br><br><br><br><br><br><br>
+<button type="submit" name = "add2">Add to Cart</button>
+<input type="text" name="p2" placeholder="price of item" value="$<?php echo $search[2][3]; ?>" />
+
+<br><br><br><br><br><br><br>
+<button type="submit" name = "add3">Add to Cart</button>
+<input type="text" name="p3" placeholder="price of item" value="$<?php echo $search[3][3]; ?>" />
+
+<br><br><br><br><br><br><br>
+<button type="submit" name = "add4">Add to Cart</button>
+<input type="text" name="p4" placeholder="price of item" value="$<?php echo $search[4][3]; ?>" />
 </form>
 
 <script src="catalog_items.js"></script>
