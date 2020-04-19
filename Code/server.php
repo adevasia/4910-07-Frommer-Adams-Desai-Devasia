@@ -352,7 +352,7 @@ if (isset($_POST['add0'])) {
 	$user_id = $user['id'];
 
 	//$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
-	$_SESSION['ratio'] = 1.5;
+	$_SESSION['ratio'] = 2;
 
 	$query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
 
