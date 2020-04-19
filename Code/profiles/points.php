@@ -16,6 +16,16 @@ it doesn't send the data over -->
     </title> 
 	<link rel="stylesheet" type="text/css" href="../navigation.css">
 	<link rel="stylesheet" type="text/css" href="home_bg.css">
+<!--	<script type="text/javascript">
+	
+	window.onload = function() {
+		var frm = document.getElementById("formId");
+		frm.onsubmit = function() {
+			document.getElementById("submitBtn").disabled = true;
+			return false;
+		}
+	}
+	</script>-->
 </head> 
   
 <body class ="style"> 
@@ -28,7 +38,7 @@ it doesn't send the data over -->
                 <a href="../catalog/catalog_home.php">CATALOG</a>
                 <a href="points.php">POINTS</a>
                 <a href="#">PURCHASES</a>
-                <a href="#">COMPANY</a>
+                <a href="driver_company.php">COMPANY</a>
                 <a href="../logins/login.php">LOGOUT</a>
             </div>
         </div>
@@ -48,34 +58,38 @@ it doesn't send the data over -->
 	<?php
 		$user = $_SESSION['username'];
 		echo "Hi $user, you have ";
-		if(isset($_POST['button1'])) { 
-			echo "10 points added to your account"; 
-			// Increasing the current value with 10
-			mysqli_query($db,"UPDATE users SET points = (points + 10) WHERE username='$user'");
-		} 
-		if(isset($_POST['button2'])) { 
-			echo "20 points added to your account";
-			mysqli_query($db,"UPDATE users SET points = (points + 20) WHERE username='$user'");
+		$count = 0;
+		if(isset($_POST['submitBtn'])) { 
+			if(isset($_POST['button1'])) { 
+				$count += 10; 
+				// Increasing the current value with 10
+				mysqli_query($db,"UPDATE users SET points = (points + 10) WHERE username='$user'");
+			} 
+			if(isset($_POST['button2'])) { 
+				$count += 20; 
+				mysqli_query($db,"UPDATE users SET points = (points + 20) WHERE username='$user'");
+			}
+			if(isset($_POST['button3'])) { 
+				$count += 30; 
+				mysqli_query($db,"UPDATE users SET points = (points + 30) WHERE username='$user'");
+			}
+			if(isset($_POST['button4'])) { 
+				$count += 40; 
+				mysqli_query($db,"UPDATE users SET points = (points + 40) WHERE username='$user'");
+			} 
+			echo "$count points added to your account";
 		}
-		if(isset($_POST['button3'])) { 
-			echo "30 points added to your account";
-			mysqli_query($db,"UPDATE users SET points = (points + 30) WHERE username='$user'");
-		}
-		if(isset($_POST['button4'])) { 
-			echo "40 points added to your account";
-			mysqli_query($db,"UPDATE users SET points = (points + 40) WHERE username='$user'");
-		} 
 	?> 
 	</div>
       
 	<br>
 	
-    <form method="post" action="points.php"> 
+    <form method="post" id="formId" action="points.php"> 
 		<table width="50%" align="center">
 			<tr>
 				<td  align="center" style="color:black;">
+					<input type="checkbox" id="b1" name="button1" value="Behavior 1" />
 					<?php 
-
 						$ten = "SELECT tenpoints FROM company WHERE id=123";
 						$result_ten = mysqli_query($db, $ten);
 
@@ -85,12 +99,10 @@ it doesn't send the data over -->
 						   echo "Behavior 1: $user_ten";
 						}?>
 				</td>
-				<td >
-					<input  type="submit" name="button1" value="Behavior 1" /> 
-				</td>
 			</tr>
 			<tr>
 				<td align="center" style="color:black;">
+					<input  id="b2" type="checkbox" name="button2" value="Behavior 2"  /> 
 					<?php 
 						$twen = "SELECT twentypoints FROM company WHERE id=123";
 						$result_twen = mysqli_query($db, $twen);
@@ -102,12 +114,11 @@ it doesn't send the data over -->
 						}
 					?>
 				</td>
-				<td>
-     			   <input   type="submit" name="button2" value="Behavior 2" onClick="this.disabled=true;"/> 
-				</td>
 			</tr>
 				<tr>
 					<td align="center" style="color:black;">
+						<input   type="checkbox" name="button3"  value="Behavior 3"/>				
+
 						<?php 
 							$ten = "SELECT thirtypoints FROM company WHERE id=123";
 							$result_ten = mysqli_query($db, $ten);
@@ -119,12 +130,10 @@ it doesn't send the data over -->
 							}
 						?>
 					</td>
-					<td>
-						<input  onClick="this.disabled=true;" type="submit" name="button3"  value="Behavior 3"/>				
-					</td>
 			</tr>
 			<tr>
 				<td align="center" style="color:black;">
+					<input type="checkbox" name="button4" value="Behavior 4"/>	
 					<?php 
 						$ten = "SELECT fortypoints FROM company WHERE id=123";
 						$result_ten = mysqli_query($db, $ten);
@@ -136,11 +145,10 @@ it doesn't send the data over -->
 						}
 					?>
 				</td>
-				<td>
-					<input  onClick="this.disabled=true;" type="submit" name="button4" value="Behavior 4"/>				
-				</td>
 			</tr>
 		</table>
+		<br>
+		<input type="submit" id="submitBtn" name="submitBtn" value="Submit" on/>	
     </form>
 </body> 
 </html> 

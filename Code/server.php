@@ -67,7 +67,7 @@ if (isset($_POST['signup_user'])) {
   	$password = md5($password_1);//encrypt the password before saving in the database
 
   	$query = "INSERT INTO users (username, email, password, fname, mname, role, secAns, companyN) 
-  			  VALUES('$username', '$email', '$password', '$fname', '$mname' ,'$role', '$answer', '$comp')";
+    VALUES('$username', '$email', '$password', '$fname', '$mname' ,'$role', '$answer', '$comp')";
   	$res1 = mysqli_query($db, $query);
 	$userId1 = mysqli_insert_id($db);
 	
@@ -99,7 +99,7 @@ if (isset($_POST['login_user'])) {
   	$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
   	$results = mysqli_query($db, $query);
 	  $user = mysqli_fetch_assoc($results);
-	  
+	  $_SESSION['id'] = $user['id'];
   	if (mysqli_num_rows($results) == 1) {
 	    $_SESSION['username'] = $username;
 		

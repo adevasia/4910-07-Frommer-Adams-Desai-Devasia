@@ -2,6 +2,35 @@
 Allow Drivers to see who they represent and 
 allow them to choose other companies
 -->
+<?php
+	 	include('../server.php');
+  //  require_once("connect.php");
+	$userID = $_SESSION['id'];
+
+  	mysqli_select_db($db, 'cloud337');
+	$query = "select company_id from users_has_company where users_id='$userID'";
+	$results = mysqli_query($db,$query);
+
+	if(mysqli_num_rows($results) > 0){
+		$user = mysqli_fetch_assoc($results);
+		$company = $user['company_id'];
+	}else{
+		echo "empty";
+	}
+
+	mysqli_select_db($db, 'cloud337');
+	$query = "select name from company where id='$company'";
+	$results = mysqli_query($db,$query);
+
+	if(mysqli_num_rows($results) > 0){
+		$user = mysqli_fetch_assoc($results);
+		$companyName = $user['name'];
+	}else{
+		echo "empty";
+	}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +45,6 @@ allow them to choose other companies
 
 <body class="style">
 <ul>
-	<h2 class="pointer">POINTS: </h2>
 
     <div class="dropdown">
             <button class="dropbtn"><a href="driverprof.php"><img src="profpic.png" alt="Avatar" width="50" height="50" >
@@ -41,7 +69,7 @@ allow them to choose other companies
 <p align="center">Here you will see your companies and list of all companies</p>
 	
 <h3 align="left">Your Companies:</h3>
-<p align="left">McDonalds</p>
+<p align="left"><?php echo $companyName?></p>
 <h3 align="left">Companies to choose from: </h3>
 <p align="left">Choose a company to send an request to</p>
 	<div align="left">
