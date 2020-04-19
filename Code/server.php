@@ -84,8 +84,9 @@ if (isset($_POST['signup_user'])) {
 	header('location: requestSend.html');
 	}
 	 else{
-		   	$query = "INSERT INTO users (username, email, password, fname, mname, role, secAns, companyN) 
-  			  VALUES('$username', '$email', '$password', '$fname', '$mname' ,'$role', '$answer', '$comp')";
+		   	$query = "INSERT INTO users (username, email, password, role, secAns, companyN) 
+  			  VALUES('$username', '$email', '$password', $role', '$answer', '$comp')";
+
   	$res1 = mysqli_query($db, $query);
 	$userId1 = mysqli_insert_id($db);
 	
@@ -124,6 +125,7 @@ if (isset($_POST['login_user'])) {
   	$results1 = mysqli_query($db, $query1);
 	  $user1 = mysqli_fetch_assoc($results1);
 	  
+	  $_SESSION['id'] = $user['id'];
   	if (mysqli_num_rows($results) == 1) {
 	    $_SESSION['username'] = $username;
 		 $_SESSION['un'] = $username;	

@@ -3,5 +3,4 @@ $conn = mysqli_connect("instance1.cxuvlwohim3v.us-east-1.rds.amazonaws.com", "ma
 if(!$conn){
 		die("Connection Error");
 }
-
 ?>
