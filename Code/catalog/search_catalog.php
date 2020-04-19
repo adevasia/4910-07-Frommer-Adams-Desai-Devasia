@@ -1,5 +1,41 @@
-<?php include 'finding_catalog.php';?>
-<?php include('../server.php');?>
+<?php 
+
+include('../server.php');
+$userID = $_SESSION['id'];
+
+mysqli_select_db($db, 'cloud337');
+$query = "select points from users where id='$userID'";
+$results = mysqli_query($db,$query);
+if(mysqli_num_rows($results) > 0){
+		$user = mysqli_fetch_assoc($results);
+		$points = $user['points'];
+}else{
+		echo "empty";
+}
+
+mysqli_select_db($db, 'cloud337');
+$query = "select company_id from users_has_company where users_id='$userID'";
+$results = mysqli_query($db,$query);
+
+if(mysqli_num_rows($results) > 0){
+		$user = mysqli_fetch_assoc($results);
+		$companyID = $user['company_id'];
+}else{
+		echo "empty";
+}
+mysqli_select_db($db, 'cloud337');
+$query = "select * from company where id='$companyID'";
+$results = mysqli_query($db,$query);
+
+ while($row=mysqli_fetch_assoc($results))
+    {
+	 	$name = $row['name'];
+       	$cat1 = $row['categoryone'];
+		$cat2 = $row['categorytwo'];
+		$cat3 = $row['categorythree'];
+		$cat4 = $row['categoryfour'];  
+    }
+?>
 
 <!DOCTYPE html>
 <html>
@@ -14,18 +50,20 @@
 
 <body class="style">
 <ul>
-	<h2 class="pointer">POINTS: </h2>
+	<h2 style="color:black;" class="pointer">POINTS: <?php echo $points?> </h2>
 
-<div class="dropdown">
-          <button class="dropbtn"><a href="../profiles/driverprof.html"><img src="../profiles/profpic.png" alt="Avatar" width="50" height="50" >
-          </a></button>
-          <div class="dropdown-content">
-            <a href="catalog_home.php">CATALOG</a>
-            <a href="#">SPONSORS</a>
-            <a href="../logins/login.php">LOGOUT</a>
-          </div>
-        </div>
-
+    <div class="dropdown">
+            <button class="dropbtn"><a href="driverprof.php"><img src="../profiles/profpic.png" alt="Avatar" width="50" height="50" >
+            </a></button>
+            <div class="dropdown-content">
+                <a href="../profiles/driver_home.html">HOME</a>
+                <a href="../catalog/catalog_home.php">CATALOG</a>
+                <a href="../profiles/points.php">POINTS</a>
+                <a href="#">PURCHASES</a>
+                <a href="../profiles/driver_company.php">COMPANY</a>
+                <a href="../logins/login.php">LOGOUT</a>
+            </div>
+     </div>
 
 	<button class="dropbtn2"><li><a href="shoppingCart.html"><img src="cart.png" alt="Cart" width="50" height="50"  style="float: right;"></a></li></button>
 
@@ -33,21 +71,22 @@
 
 <br style = “line-height:10”>
 
+<?php include 'finding_catalog.php';?>
 <!-- The search form -->
 <form class="example" action="search_catalog.php" method="post" style="margin:auto;max-width:500px">
 	<input type="text" id="user_input" placeholder="Search..." name="search2">
-	<button id="subButton" type="submit" onclick="myFunc()"><i class="fa fa-search"></i></button>
+	<button id="subButton" type="submit" name="search" onclick="myFunc()"><i class="fa fa-search"></i></button>
 </form>
 
 <br style = “line-height:10”>
 
 <!--Categories-->
-<div class="buttons">
-	<button class="active" data-sort="sort-all">All</button>
-	<button>Recommended</button>
-	<button>Pants</button>
-	<button>Shirts</button>
-</div>
+<form class="buttons" action="catalog_home.php" method="post">	
+	<button data-sort="sort-all" type="submit" name="cat" value="<?php echo $cat1?>" ><?php echo $cat1?></button>
+	<button type="submit" name="cat" value="<?php echo $cat2?>"><?php echo $cat2?></button>
+	<button type="submit" name="cat" value="<?php echo $cat3?>"><?php echo $cat3?></button>
+	<button type="submit" name="cat" value="<?php echo $cat4?>"><?php echo $cat4?></button>
+</form>	
   
 <br style = “line-height:10”>
 

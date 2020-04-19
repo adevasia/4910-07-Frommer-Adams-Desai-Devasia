@@ -5,6 +5,8 @@ session_start();
 $username = "";
 $email    = "";
 $role     = "";
+$userId2 = "";
+$comp = "";
 $errors = array(); 
 
 // connect to the database
@@ -22,9 +24,10 @@ if (isset($_POST['signup_user'])) {
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $password_1 = mysqli_real_escape_string($db, $_POST['password']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password2']);
-  $fname = "Ashen";
-  $mname = "Last";
-
+  $answer = mysqli_real_escape_string($db, $_POST['question']);
+  $comp = $_POST['company'];
+  $an = 0;
+	
   if (empty($_POST['Driver']) && empty($_POST['Sponsor'])) {
 	  $role = mysqli_real_escape_string($db, $_POST['Administrator']);
   }elseif(empty($_POST['Sponsor']) && empty($_POST['Administrator'])) {
@@ -42,6 +45,8 @@ if (isset($_POST['signup_user'])) {
 	array_push($errors, "The two passwords do not match");
   }
   if(empty($role)) { array_push($errors, "Choose: Driver/Sponsor/Administrator");}
+  if(empty($answer)) {array_push($errors, "Please answer your security question");}
+  if(empty($comp)) { array_push($errors, "Please select your company");}
 
   $_SESSION['emails'] = $email;
   
@@ -64,11 +69,37 @@ if (isset($_POST['signup_user'])) {
   // Finally, register user if there are no errors in the form
   if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
-
-  	$query = "INSERT INTO users (username, email, password, fname, mname, role) 
-  			  VALUES('$username', '$email', '$password', '$fname', '$mname' ,'$role')";
-  	mysqli_query($db, $query);
-  	header('location: login.php');
+	$answer = md5($answer); //added the security question encryption
+	
+	if($role === "Driver"){
+    		  	$query ="INSERT INTO requests (username, email, password, role, secAns, companyN) 
+			  VALUES('$username', '$email', '$password','$role', '$answer', '$comp')";
+      	$res1 = mysqli_query($db, $query);
+    	$userId1 = mysqli_insert_id($db);
+    	
+    	$id = "SELECT id FROM company WHERE name='$comp'";
+        $results = mysqli_query($db, $id);
+        $user = mysqli_fetch_assoc($results);
+        $userId2 = $user['id'];
+    	  
+    	header('location: requestSend.html');
+	}
+	 else{
+    		   	$query = "INSERT INTO users (username, email, password, fname, mname, role, secAns, companyN) 
+			  VALUES('$username', '$email', '$password', '$fname', '$mname' ,'$role', '$answer', '$comp')";
+    
+      	$res1 = mysqli_query($db, $query);
+    	$userId1 = mysqli_insert_id($db);
+    	
+    	$id = "SELECT id FROM company WHERE name='$comp'";
+        $results = mysqli_query($db, $id);
+        $user = mysqli_fetch_assoc($results);
+        $userId2 = $user['id'];
+    	  
+    	$query1 = "INSERT INTO users_has_company(users_id, company_id) VALUES ($userId1, $userId2)";
+    	mysqli_query($db, $query1);
+    	header('location: login.php');
+	 }
   }
 }
 
@@ -86,13 +117,19 @@ if (isset($_POST['login_user'])) {
 
   if (count($errors) == 0) {
   	$password = md5($password);
+	  
   	$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
   	$results = mysqli_query($db, $query);
 	  $user = mysqli_fetch_assoc($results);
 	  
+	   $query1 = "SELECT * FROM requests WHERE username='$username' AND password='$password'";
+  	$results1 = mysqli_query($db, $query1);
+	  $user1 = mysqli_fetch_assoc($results1);
+	  
+	  $_SESSION['id'] = $user['id'];
   	if (mysqli_num_rows($results) == 1) {
 	    $_SESSION['username'] = $username;
-		
+		 $_SESSION['un'] = $username;	
   	  if($user['role'] === "Driver"){
   		  header('location: ../profiles/driver_home.html');
   	  }elseif($user['role'] === "Sponsor"){
@@ -101,6 +138,12 @@ if (isset($_POST['login_user'])) {
   		  header('location: ../profiles/admin_home.html');
       }
     }
+	else if(mysqli_num_rows($results1) == 1) {
+			 $_SESSION['un'] = $username;
+	  if($user1['role'] === "Driver"){
+  		  echo "Your request has not been accepted yet!!";
+  	  }
+	}
     else {
   		array_push($errors, "Wrong username/password combination");
   	}
@@ -327,5 +370,67 @@ if (isset($_POST['add'])) {
     }
 }
 
+if(isset($_POST['reset_pass'])){
+	$givenAns = mysqli_real_escape_string($db, $_POST['question']);
+	$givenUsername = mysqli_real_escape_string($db, $_POST['username']);
+
+	if(empty($givenAns))
+		array_push($errors, "Security answer is required");
+	if(empty($givenUsername))
+		array_push($errors, "username is required");
+
+	if(count($errors) == 0){
+		$query = "SELECT secAns FROM users WHERE username='$givenUsername'";
+		$results = mysqli_query($db, $query);
+		$user = mysqli_fetch_assoc($results);
+		if(mysqli_num_rows($results) == 1) {
+                $_SESSION['user'] = $givenUsername;
+			if($user['secAns'] === $givenAns){
+					header('location: resetPass.php');
+			}
+			else{
+				header('location: forgotPass.php');
+				array_push($errors, "The security answer does not match");
+			}
+		}else{
+			header('location: forgotPass.php');
+			array_push($errors, "Your username does not match");
+		}
+	}}
+	
+if(isset($_POST['pass_change'])){
+	$pas1 = mysqli_real_escape_string($db, $_POST['pass1']);
+        $pas2 = mysqli_real_escape_string($db, $_POST['pass2']);
+	$username = $_SESSION['user'];
+
+        if(empty($pas1)) array_push($errors, "New password is required");	
+	if(empty($pas2)) array_push($errors, "Need to confirm your password");
+
+	if ($pas1 != $pas2) {
+	   array_push($errors, "The two passwords do not match");
+        }
+	if(count($errors) == 0){
+	mysqli_select_db($db, 'cloud337');
+        $id = "SELECT id FROM users WHERE username='$username'";
+        $results = mysqli_query($db, $id);
+
+  if(mysqli_num_rows($results) > 0){
+
+    $user = mysqli_fetch_assoc($results);
+    $user_id = $user['id'];
+
+    $pas1 = md5($pas1);
+    $query = "UPDATE users SET password = '$pas1' WHERE ID=$user_id"; 
+  
+    if(mysqli_query($db, $query))
+       header('location: login.php');
+  }}
+  else
+    array_push($errors, "Please Fill the required fields.");
+
+}
+
 ?>
+
+
 
