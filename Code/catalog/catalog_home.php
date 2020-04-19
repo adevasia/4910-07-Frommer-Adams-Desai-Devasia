@@ -98,13 +98,119 @@ $results = mysqli_query($db,$query);
 <button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
 <br style = “line-height:10”>
 
+<form action="catalog_home.php" method="post">
 <table class="column">
-	<tr>
-	  <td >
-		<?php echo $results?>
-	  </td>
-	</tr>
+  <tr>
+  <td >
+    <input type="text" name="t0" placeholder="title" value="<?php session_start(); echo $search[0][2]; ?>" />
+    <?php session_start();
+    $pic = $search[0][0];
+    $link = $search[0][1];
+    $title = $search[0][2];
+    $price = $search[0][3];
+    $category = $search[0][4];
+    $shippingInfo = $search[0][5];
+    $results = $search[0][6];
+    echo $results;  ?>
+</td>
+</tr>
+
+  <tr>
+  <td >
+    <input type="text" name="t1" placeholder="title" value="<?php session_start(); echo $search[1][2]; ?>" />
+    <?php session_start();
+    $pic = $search[1][0];
+    $link = $search[1][1];
+    $title = $search[1][2];
+    $price = $search[1][3];
+    $category = $search[1][4];
+    $shippingInfo = $search[1][5];
+    $result = $search[1][6];
+    echo $results;  ?>
+  </td>
+</tr>
+
+  <tr>
+  <td >
+    <input type="text" name="t2" placeholder="title" value="<?php session_start(); echo $search[2][2]; ?>" />
+    <?php session_start();
+    $pic = $search[2][0];
+    $link = $search[2][1];
+    $title = $search[2][2];
+    $price = $search[2][3];
+    $category = $search[2][4];
+    $shippingInfo = $search[2][5];
+    $result = $search[2][6];
+    echo $results; ?>
+  </td>
+</tr>
+
+<tr>
+  <td >
+    <input type="text" name="t3" placeholder="title" value="<?php session_start(); echo $search[3][2]; ?>" />
+    <?php session_start();
+    $pic = $search[3][0];
+    $link = $search[3][1];
+    $title = $search[3][2];
+    $price = $search[3][3];
+    $category = $search[3][4];
+    $shippingInfo = $search[3][5];
+    $results = $search[3][6];
+    //echo "<img src=\"$pic\">";
+    echo $results;  ?>
+
+  </td>
+</tr>
+
+  <tr>
+  <td >
+    <input type="text" name="t4" placeholder="title" value="<?php session_start(); echo $search[4][2]; ?>" />
+    <?php session_start();
+    $pic = $search[4][0];
+    $link = $search[4][1];
+    $title = $search[4][2];
+    $price = $search[4][3];
+    $category = $search[4][4];
+    $shippingInfo = $search[4][5];
+    $results = $search[4][6];
+    echo $results;  ?>
+
+  </td>
+</tr>
+
+  <tr>
+  <td >
+    <input type="text" name="t4" placeholder="title" value="<?php session_start(); echo $search[4][2]; ?>" />
+    <?php session_start();
+    $pic = $search[4][0];
+    $link = $search[4][1];
+    $title = $search[4][2];
+    $price = $search[4][3];
+    $category = $search[4][4];
+    $shippingInfo = $search[4][5];
+    $results = $search[4][6];
+    echo $results;  ?>
+
+  </td>
+</tr>
+
+  <tr>
+  <td >
+    <input type="text" name="t5" placeholder="title" value="<?php session_start(); echo $search[5][2]; ?>" />
+    <?php session_start();
+    $pic = $search[5][0];
+    $link = $search[5][1];
+    $title = $search[5][2];
+    $price = $search[5][3];
+    $category = $search[5][4];
+    $shippingInfo = $search[5][5];
+    $results = $search[5][6];
+    echo $results;  ?>
+
+  </td>
+</tr>
 </table>
+</form>
 
 
 <script src="catalog_items.js"></script>

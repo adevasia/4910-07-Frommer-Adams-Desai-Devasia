@@ -37,7 +37,8 @@ for their company
 		Behavior 2: <input type="text" name="behave2" /><br><br>
 		Behavior 3: <input type="text" name="behave3" /><br><br>
 		Behavior 4: <input type="text" name="behave4" /><br><br>
-
+                 
+		Point ratio: <input type="text" name="pointratio" placeholder="per $1"/><br><br>
 		<button type="submit" name = "submit">Set Points</button>
 		</font>
 	</form>
