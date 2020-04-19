@@ -67,33 +67,19 @@ if (isset($_POST['signup_user'])) {
   	$password = md5($password_1);//encrypt the password before saving in the database
 
   	$query = "INSERT INTO users (username, email, password, fname, mname, role, secAns, companyN) 
-			  VALUES('$username', '$email', '$password', '$fname', '$mname' ,'$role', '$answer', '$comp')";
-	$res1 = mysqli_query($db, $query);
-	$users_id1 = mysqli_insert_id($db);
-	  
-	   
-	/*$username = "a";
-	$ids = "SELECT ID FROM users WHERE username='$username'";
-	$results = mysqli_query($db, $ids);
-	if(mysqli_num_rows($results) > 0){
-    $user = mysqli_fetch_assoc($results);
-    $userId2 = $user['id'];}
-	else{echo "errorrrrrrrr";}
-	 */
-
+    VALUES('$username', '$email', '$password', '$fname', '$mname' ,'$role', '$answer', '$comp')";
+  	$res1 = mysqli_query($db, $query);
+	$userId1 = mysqli_insert_id($db);
+	
 	$id = "SELECT id FROM company WHERE name='$comp'";
     $results = mysqli_query($db, $id);
     $user = mysqli_fetch_assoc($results);
     $userId2 = $user['id'];
-	
-    $query = "INSERT INTO users_has_company (users_id, company_id)
-	      VALUES($users_id1, $userId2)";
-    if(mysqli_query($db, $query));
 	  
-/*	$query1 = "INSERT INTO users_comp(users_id, company_id) VALUES ('$userId1', '$userId2')";
-	$rs1 = mysqli_query($db, $query1);
+	$query1 = "INSERT INTO users_has_company(users_id, company_id) VALUES ($userId1, $userId2)";
+	mysqli_query($db, $query1);
 	header('location: login.php');
- */}
+  }
 }
 
 // LOGIN USER
