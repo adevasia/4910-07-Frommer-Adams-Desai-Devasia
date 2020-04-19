@@ -5,17 +5,17 @@
 <head>
 <style>
     .button {
-	float: middle;
-	border: 0;
-	margin-top: 20px;
-	padding: 6px 25px;
-	background-color: #6b6;
-	color: #fff;
-	font-size: 25px;
-	border-radius: 3px;
+        float: middle;
+        border: 0;
+        margin-top: 20px;
+        padding: 6px 25px;
+        background-color: #6b6;
+        color: #fff;
+        font-size: 25px;
+        border-radius: 3px;
     }
     .button:hover {
-	background-color: 494;
+        background-color: 494;
     }
 </style>
     <title>Checkout</title>
@@ -42,17 +42,18 @@
     </ul>
     <br>
     <h1> Checkout </h1>
-    
+
         <p style="font-size:17px">You have purchased:</p>
         <p style="font-size:25px"><?php echo $_SESSION['title']; ?></p>
         <p style="font-size:17px">Price:</p>
-	<p style="font-size:25px">$<?php echo $_SESSION['total']; ?> ( <?php echo $_SESSION['ptotal']; ?>) </p>
+        <p style="font-size:25px">$<?php echo $_SESSION['total']; ?> ( <?php echo $_SESSION['ptotal']; ?>) </p>
         <p style="font-size:17px">Your purchase will be shipped to:</p>
         <p style="font-size:25px"><?php echo $_SESSION['street']; echo " "; echo $_SESSION['city']; ?></p>
         <p style="font-size:17px">You now have:</p>
-        <p style="font-size:25px"><?php $newp = $_SESSION['points'] - $_SESSION['ptotal']; 
-			echo $newp; ?> points</p>
+        <p style="font-size:25px"><?php $newp = $_SESSION['points'] - $_SESSION['ptotal'];
+                        echo $newp; ?> points</p>
     <button class="button"><a href="catalog_home.php">Keep Shopping</button>
-   
+
 </body>
 </html>
+
