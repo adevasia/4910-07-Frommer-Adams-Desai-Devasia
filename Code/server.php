@@ -69,7 +69,6 @@ if (isset($_POST['signup_user'])) {
   // Finally, register user if there are no errors in the form
   if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
-	$answer = md5($answer); //added the security question encryption
 	
 	if($role === "Driver"){
     		  	$query ="INSERT INTO requests (username, email, password, role, secAns, companyN) 
@@ -335,10 +334,10 @@ if (isset($_POST['submitAdmin'])) {
             mysqli_query($db,"UPDATE users SET points = (points + 40) WHERE ID=$user_id");
   } }
 
-if (isset($_POST['add'])) {
+if (isset($_POST['add0'])) {
     $username = $_SESSION['username'];
-    $price = mysqli_real_escape_string($db, $_POST['p']);
-    $title = mysqli_real_escape_string($db, $_POST['t']);
+    $price = mysqli_real_escape_string($db, $_POST['p0']);
+    $title = mysqli_real_escape_string($db, $_POST['t0']);
     //$price = $_SESSION['items'][3];
 
     $_SESSION['price'] = $price;
@@ -430,7 +429,857 @@ if(isset($_POST['pass_change'])){
 
 }
 
+if (isset($_POST['add1'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p1']);
+    $title = mysqli_real_escape_string($db, $_POST['t1']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add2'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p2']);
+    $title = mysqli_real_escape_string($db, $_POST['t2']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add3'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p3']);
+    $title = mysqli_real_escape_string($db, $_POST['t3']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add4'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p4']);
+    $title = mysqli_real_escape_string($db, $_POST['t4']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add5'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p5']);
+    $title = mysqli_real_escape_string($db, $_POST['t5']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add6'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p6']);
+    $title = mysqli_real_escape_string($db, $_POST['t6']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add7'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p7']);
+    $title = mysqli_real_escape_string($db, $_POST['t7']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add8'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p8']);
+    $title = mysqli_real_escape_string($db, $_POST['t8']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add9'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p9']);
+    $title = mysqli_real_escape_string($db, $_POST['t9']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add10'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p10']);
+    $title = mysqli_real_escape_string($db, $_POST['t10']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add11'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p11']);
+    $title = mysqli_real_escape_string($db, $_POST['t11']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add12'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p12']);
+    $title = mysqli_real_escape_string($db, $_POST['t12']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add13'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p13']);
+    $title = mysqli_real_escape_string($db, $_POST['t13']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add14'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p14']);
+    $title = mysqli_real_escape_string($db, $_POST['t14']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add15'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p15']);
+    $title = mysqli_real_escape_string($db, $_POST['t15']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add16'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p16']);
+    $title = mysqli_real_escape_string($db, $_POST['t16']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add17'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p17']);
+    $title = mysqli_real_escape_string($db, $_POST['t17']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add18'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p18']);
+    $title = mysqli_real_escape_string($db, $_POST['t18']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add19'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p19']);
+    $title = mysqli_real_escape_string($db, $_POST['t19']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add20'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p20']);
+    $title = mysqli_real_escape_string($db, $_POST['t20']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add21'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p21']);
+    $title = mysqli_real_escape_string($db, $_POST['t21']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add22'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p22']);
+    $title = mysqli_real_escape_string($db, $_POST['t22']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add23'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p23']);
+    $title = mysqli_real_escape_string($db, $_POST['t23']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['add24'])) {
+    $username = $_SESSION['username'];
+    $price = mysqli_real_escape_string($db, $_POST['p24']);
+    $title = mysqli_real_escape_string($db, $_POST['t24']);
+    //$price = $_SESSION['items'][3];
+
+    $_SESSION['price'] = $price;
+    $_SESSION['title'] = $title;
+
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $user_id = $user['id'];
+
+        //$ratio = mysqli_query($db, "SELECT fname FROM users WHERE username='$username'");
+        $_SESSION['ratio'] = 1.5;
+
+        $query = "UPDATE users SET price = '$price', title = '$title' WHERE ID=$user_id";
+
+        if (mysqli_query($db, $query)) {
+            header('location: shoppingCart.php');
+        }
+        else {
+            array_push($errors, "id is $user_id");
+            header('location: shoppingCart.php');
+        }
+    }
+    else {
+        array_push($errors, "In another else id");
+    }
+}
+
+if (isset($_POST['checkout'])) {
+    $username = $_SESSION['username'];
+    mysqli_select_db($db, 'cloud337');
+    $id = "SELECT id FROM users WHERE username='$username'";
+    $results = mysqli_query($db, $id);
+
+    if (mysqli_num_rows($results) > 0) {
+        $user = mysqli_fetch_assoc($results);
+        $_SESSION['points'] = 110;
+    }
+    header('location: checkout.php');
+}
+
 ?>
-
-
-
