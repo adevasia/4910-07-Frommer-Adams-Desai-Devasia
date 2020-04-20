@@ -1,12 +1,12 @@
 # 4910-07-Frommer-Adams-Desai-Devasia
 
-Hostname: instance1.cxuvlwohim3v.us-east-1.rds.amazonaws.com
+- Hostname: instance1.cxuvlwohim3v.us-east-1.rds.amazonaws.com
 
-username: master 
+- username: master 
 
-Password: password 
+- Password: password 
 
-Schema: cloud337 
+- Schema: cloud337 
 
 
 
