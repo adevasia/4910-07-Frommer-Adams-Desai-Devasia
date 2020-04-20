@@ -9,6 +9,8 @@ Password: password
 Schema: cloud337 
 
 
-Run database/script.sql to create the database tables on the database server
 
-link: http://3.94.105.144/test/Code/logins/login.php 
+
+- Run database/script.sql to create the database tables on the database server
+
+- link: http://3.94.105.144/test/Code/logins/login.php 
