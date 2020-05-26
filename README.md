@@ -10,4 +10,4 @@
 
 - link: http://3.94.105.144/test/Code/logins/login.php 
 
-- A quick glance into our website: https://drive.google.com/drive/u/0/my-drive?ths=true
+- A quick glance into our website: https://drive.google.com/file/d/1d4V95YwsuWk6XioNHSWbEX-IaiGIwIgv/view?usp=sharing
