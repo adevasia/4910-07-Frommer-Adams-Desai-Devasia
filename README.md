@@ -9,3 +9,5 @@
 - Run database/script.sql to create the database tables on the database server
 
 - link: http://3.94.105.144/test/Code/logins/login.php 
+
+- A quick glance into our website: https://drive.google.com/drive/u/0/my-drive?ths=true
